@@ -1,0 +1,76 @@
+{
+  "reviews": [
+    {
+      "id": "r1",
+      "name": "Sophia Laurent",
+      "initials": "SL",
+      "rating": 5,
+      "review": "An extraordinary dining experience. The Liora Mixed Grill is simply the finest charcoal grill I have tasted outside of Istanbul. The atmosphere is refined yet warm — we will absolutely be back.",
+      "date": "March 2025",
+      "dish": "Liora Mixed Grill"
+    },
+    {
+      "id": "r2",
+      "name": "Marcus Hoffmann",
+      "initials": "MH",
+      "rating": 5,
+      "review": "The Burrata Pizza is a revelation. That combination of perfectly charred crust and cool, creamy burrata is genuinely one of the best things I have eaten this year. The service matches the quality.",
+      "date": "April 2025",
+      "dish": "Burrata Pizza"
+    },
+    {
+      "id": "r3",
+      "name": "Aisha Nkrumah",
+      "initials": "AN",
+      "rating": 5,
+      "review": "I hosted a business dinner for eight here and LIORA exceeded every expectation. Staff were impeccable, food beautifully presented, and the lamb chops were cooked to absolute perfection.",
+      "date": "February 2025",
+      "dish": "Lamb Chops"
+    },
+    {
+      "id": "r4",
+      "name": "James Calloway",
+      "initials": "JC",
+      "rating": 5,
+      "review": "The Boss Double Burger deserves its name. Two perfectly charcoal-grilled patties, extraordinary depth of flavour, and that sauce — I am still thinking about it three weeks later.",
+      "date": "May 2025",
+      "dish": "The Boss Double"
+    },
+    {
+      "id": "r5",
+      "name": "Elena Vassiliev",
+      "initials": "EV",
+      "rating": 5,
+      "review": "Brought my parents here for their anniversary. The Meze Plate was a journey through the Mediterranean — each component clearly made with real care. LIORA has become our family's special occasion restaurant.",
+      "date": "January 2025",
+      "dish": "Meze Plate"
+    },
+    {
+      "id": "r6",
+      "name": "Thomas Bergmann",
+      "initials": "TB",
+      "rating": 5,
+      "review": "The Grilled Salmon was cooked to perfection — flaky, moist, beautifully seasoned. The ambience is sophisticated without feeling stuffy. Exactly what a fine dining experience should feel like.",
+      "date": "March 2025",
+      "dish": "Grilled Salmon"
+    },
+    {
+      "id": "r7",
+      "name": "Priya Chandran",
+      "initials": "PC",
+      "rating": 4,
+      "review": "Exceptional quality across the board. The Hot Honey Pepperoni pizza has the perfect balance of sweet heat. LIORA clearly takes pride in every single detail — from the plating to the warm service.",
+      "date": "April 2025",
+      "dish": "Hot Honey Pepperoni"
+    },
+    {
+      "id": "r8",
+      "name": "Rafael Mendes",
+      "initials": "RM",
+      "rating": 5,
+      "review": "Took my wife here for our anniversary. From the moment we arrived, the experience was seamless. The Baklava and Ice Cream was the perfect ending to a truly perfect evening.",
+      "date": "February 2025",
+      "dish": "Baklava & Ice Cream"
+    }
+  ]
+}

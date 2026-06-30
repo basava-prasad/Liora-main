@@ -1,0 +1,11 @@
+{
+  "images": [
+    { "src": "/images/ambience/Interior-1.jpeg", "alt": "LIORA Restaurant Interior", "aspect": "16/9" },
+    { "src": "/images/ambience/interior-2.jpeg", "alt": "LIORA Dining Area" },
+    { "src": "/images/ambience/interior-3.jpeg", "alt": "LIORA Restaurant Ambience" },
+    { "src": "/images/ambience/interior-4.jpeg", "alt": "LIORA Table Setting" },
+    { "src": "/images/ambience/interior-5.jpeg", "alt": "LIORA Restaurant Atmosphere" },
+    { "src": "/images/chef/interior-6.jpeg", "alt": "LIORA Open Kitchen" },
+    { "src": "/images/chef/interior-7.jpeg", "alt": "LIORA Chef's Kitchen" }
+  ]
+}

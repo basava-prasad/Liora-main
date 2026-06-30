@@ -1,0 +1,17 @@
+/* Design tokens — imported by app/globals.css */
+
+:root {
+  --gold: #7A1515;
+  --gold-light: #952020;
+  --gold-dark: #4A0D0D;
+  --gold-muted: #5C1414;
+
+  --luxury-black: #000000;
+  --luxury-dark: #080808;
+  --luxury-card: #0e0e0e;
+  --luxury-border: #1a1a1a;
+
+  --cream: #F5E6D3;
+  --cream-muted: #C4A882;
+  --cream-dark: #8a7a6a;
+}

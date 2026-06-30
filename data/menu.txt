@@ -1,0 +1,312 @@
+# LIORA RESTAURANT MENU
+
+Restaurant Name: LIORA
+
+Cuisine:
+
+* Mediterranean
+* Turkish
+* Charcoal Grill
+* Handmade Pizza
+* Burgers
+* Buffet
+
+Currency:
+Euro (€)
+
+---
+
+# HERO DISHES
+
+⭐⭐⭐ Liora Mixed Grill (Hero Dish)
+Price: €52.90 (2 Persons) / €104.90 (4 Persons)
+Category: Charcoal Grill
+Description:
+A premium sharing platter featuring Chicken Shish, Shish Kebab, Lamb Ribs and your choice of side. The restaurant's signature charcoal grill experience.
+
+⭐⭐ Beef Tenderloin Shish
+Price: €17.90 / €22.90
+
+⭐⭐ Burrata Pizza
+Price: €15.90
+
+⭐⭐ The Boss Double Burger
+Price: €19.90
+
+⭐⭐ Baklava & Ice Cream
+Price: €7.90
+
+⭐⭐ Liora Mocktail
+Price: €5.90
+
+---
+
+# STARTERS
+
+Hummus
+€5.90
+
+Cacik
+€5.90
+
+Baba Ghanoush
+€6.90
+
+Dolma
+€6.90
+
+Garlic Bread
+€6.90
+
+Garlic Bread with Cheese
+€7.90
+
+⭐⭐ Meze Plate
+€19.90
+
+---
+
+# SALADS
+
+Greek Salad
+€13.90
+
+Halloumi Salad
+€14.90
+
+Grilled Chicken Salad
+€15.90
+
+---
+
+# CHARCOAL GRILL
+
+Chicken Shish
+1 Skewer €13.90
+2 Skewers €16.90
+
+⭐⭐ Beef Tenderloin Shish
+1 Skewer €17.90
+2 Skewers €22.90
+
+Shish Kebab
+1 Skewer €14.90
+2 Skewers €17.90
+
+Adana Kebab
+1 Skewer €14.90
+2 Skewers €17.90
+
+⭐⭐ Lamb Chops
+€23.90
+
+Lamb Ribs
+€19.90
+
+⭐⭐ Grilled Salmon
+€21.90
+
+Charcoal Grilled Wings
+€16.90
+
+Halloumi Grill
+€16.90
+
+Veggie Grill
+€15.90
+
+⭐⭐⭐ Liora Mixed Grill (2 Persons)
+€52.90
+
+⭐⭐⭐ Liora Mixed Grill (4 Persons)
+€104.90
+
+---
+
+# ROTISSERIE CHICKEN
+
+Half Chicken
+€15.90
+
+Whole Chicken
+€20.90
+
+---
+
+# DÖNER
+
+Döner Plate
+€13.90
+
+Iskender Döner
+€14.90
+
+Döner Roll
+€14.90
+
+Stuffed Döner Bread
+€13.90
+
+Döner Sandwich
+€16.90
+
+⭐⭐ Liora Special Döner
+€16.90
+
+---
+
+# HANDCRAFTED PIZZAS
+
+Marinara
+€12.90
+
+Margherita
+€12.90
+
+Dolce Vita
+€13.90
+
+⭐⭐ Hot Honey Pepperoni
+€14.90
+
+Formaggi di Casa
+€14.90
+
+Primavera
+€14.90
+
+Pesto Pizza
+€14.90
+
+Pollo Pesto
+€14.90
+
+Carne Reale
+€14.90
+
+Salmone Bianco
+€15.90
+
+Mare Bianca
+€15.90
+
+Bresaola
+€15.90
+
+⭐⭐ Burrata Pizza
+€15.90
+
+⭐⭐ Liora Pizza
+€15.90
+
+DIY Pizza
+€14.90
+
+---
+
+# CHARCOAL GRILL BURGERS
+
+Cheese Lover
+€14.90
+
+BBQ Bacon
+€16.90
+
+⭐⭐ Monterey Jack
+€17.90
+
+⭐⭐ The Boss Double
+€19.90
+
+Barbecue Pulled Chicken
+€15.90
+
+Smoky Vegan
+€18.90
+
+---
+
+# SIDES
+
+House Fries
+€3.50
+
+Sliced Potatoes
+€3.50
+
+Parmesan Fries
+€5.90
+
+Loaded Fries
+€5.90
+
+---
+
+# DESSERTS
+
+⭐⭐ Baklava & Ice Cream
+€7.90
+
+Rice Pudding
+€6.90
+
+Mud Cake
+€7.90
+
+---
+
+# DRINKS
+
+Soft Drinks
+
+Non-Alcoholic Beer
+
+Non-Alcoholic Wine
+
+Coffee
+
+Tea
+
+⭐⭐ Liora Mocktail
+€5.90
+
+---
+
+# BUFFET
+
+Weekday Buffet
+
+Weekend Buffet
+
+Includes:
+
+* Fresh Salad Bar
+* Daily Hot Dishes
+* Pizza
+* Döner
+* Charcoal Grill
+* Fresh Bread
+* Coffee
+* Tea
+* Juice
+
+---
+
+# WEBSITE SIGNATURE DISHES
+
+Use these dishes throughout the website:
+
+1. Liora Mixed Grill ⭐⭐⭐
+2. Burrata Pizza ⭐⭐
+3. Liora Pizza ⭐⭐
+4. Beef Tenderloin Shish ⭐⭐
+5. Lamb Chops ⭐⭐
+6. Grilled Salmon ⭐⭐
+7. The Boss Double ⭐⭐
+8. Monterey Jack Burger ⭐⭐
+9. Meze Plate ⭐⭐
+10. Baklava & Ice Cream ⭐⭐
+11. Liora Mocktail ⭐⭐
+12. Hot Honey Pepperoni ⭐⭐
+
+These are the primary dishes that should appear in hero banners, featured sections, galleries, and promotional content.
