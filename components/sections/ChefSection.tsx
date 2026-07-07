@@ -5,14 +5,17 @@ import { motion } from 'framer-motion'
 import Section from '@/components/common/Section'
 import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/lib/animations'
 import { Award, UtensilsCrossed, Heart } from 'lucide-react'
-
-const accolades = [
-  { icon: Award, label: 'Culinary Excellence', value: '15+ Years' },
-  { icon: UtensilsCrossed, label: 'Dishes Crafted', value: '200+' },
-  { icon: Heart, label: 'Happy Guests', value: '50,000+' },
-]
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function ChefSection() {
+  const { t } = useLanguage()
+
+  const accolades = [
+    { icon: Award, label: t('chef.accoladeExcellenceLabel'), value: t('chef.accoladeExcellenceValue') },
+    { icon: UtensilsCrossed, label: t('chef.accoladeDishesLabel'), value: t('chef.accoladeDishesValue') },
+    { icon: Heart, label: t('chef.accoladeGuestsLabel'), value: t('chef.accoladeGuestsValue') },
+  ]
+
   return (
     <Section id="chef" className="bg-luxury-black overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -24,10 +27,10 @@ export default function ChefSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <motion.p variants={fadeInUp} className="section-label mb-4">The Culinary Mind</motion.p>
+          <motion.p variants={fadeInUp} className="section-label mb-4">{t('chef.label')}</motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            Meet the{' '}
-            <span className="italic text-gold">Chef</span>
+            {t('chef.titleMain')}{' '}
+            <span className="italic text-gold">{t('chef.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
         </motion.div>
@@ -46,23 +49,23 @@ export default function ChefSection() {
               variants={fadeInUp}
               className="font-accent text-xl md:text-2xl text-cream italic leading-relaxed mb-6"
             >
-              Every dish I create is a letter written to a memory — a coastal market in Istanbul, a grandmother's kitchen in Ankara, the scent of olive groves at dawn.
+              {t('chef.quote')}
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="text-cream-muted font-body font-light text-base leading-relaxed mb-4"
             >
-              Chef Mehmet Yilmaz brings over fifteen years of culinary mastery to every plate that leaves the LIORA kitchen. Trained in Istanbul and honed across the finest kitchens of Europe, his philosophy centres on a single conviction: that the most extraordinary meals are those rooted in place and memory.
+              {t('chef.bio1')}
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="text-cream-muted font-body font-light text-base leading-relaxed mb-8"
             >
-              At LIORA, he has curated a menu that honours the breadth of Mediterranean tradition — from the charcoal-kissed proteins of the Levant to the wood-fired pizzas of the Campanian coast — each preparation elevated with seasonal ingredients and modern technique.
+              {t('chef.bio2')}
             </motion.p>
             <motion.div variants={fadeInUp}>
-              <p className="font-display text-lg text-cream">Chef Mehmet Yilmaz</p>
-              <p className="text-cream-dark text-sm font-body mt-1 tracking-wide">Executive Chef &amp; Co-Founder, LIORA</p>
+              <p className="font-display text-lg text-cream">{t('chef.name')}</p>
+              <p className="text-cream-dark text-sm font-body mt-1 tracking-wide">{t('chef.role')}</p>
             </motion.div>
           </motion.div>
 
@@ -77,12 +80,12 @@ export default function ChefSection() {
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
                 src="/images/chef/chefs-full-work-mode.jpeg"
-                alt="Chef Mehmet Yilmaz at work"
+                alt={t('chef.chefImageAlt')}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-luxury-black/15 to-transparent" />
             </div>
             <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-gold/40" />
             <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-gold/40" />
@@ -129,12 +132,11 @@ export default function ChefSection() {
             >
               <Image
                 src={src}
-                alt={`LIORA kitchen ${i + 1}`}
+                alt={t('chef.kitchenImageAlt', { n: i + 1 })}
                 fill
                 className="object-cover"
                 sizes="(max-width: 768px) 50vw, 700px"
               />
-              <div className="absolute inset-0 bg-luxury-black/30" />
             </motion.div>
           ))}
         </motion.div>

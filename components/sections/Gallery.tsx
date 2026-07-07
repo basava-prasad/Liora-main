@@ -6,10 +6,12 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { X } from 'lucide-react'
 import Section from '@/components/common/Section'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
+import type { LocalizedText } from '@/types'
 
 interface GalleryImage {
   src: string
-  alt: string
+  alt: LocalizedText
   aspect?: string
 }
 
@@ -20,6 +22,7 @@ interface GalleryProps {
 export default function Gallery({ images }: GalleryProps) {
   const [showGallery, setShowGallery] = useState(false)
   const [lightbox, setLightbox] = useState<GalleryImage | null>(null)
+  const { t, tr } = useLanguage()
 
   return (
     <Section id="gallery" className="bg-luxury-dark">
@@ -32,17 +35,17 @@ export default function Gallery({ images }: GalleryProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <motion.p variants={fadeInUp} className="section-label mb-4">The Space</motion.p>
+          <motion.p variants={fadeInUp} className="section-label mb-4">{t('gallery.label')}</motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            Inside{' '}
-            <span className="italic text-gold">LIORA</span>
+            {t('gallery.titleMain')}{' '}
+            <span className="italic text-gold">{t('gallery.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
           <motion.p
             variants={fadeInUp}
             className="mt-5 text-cream-muted max-w-xl mx-auto text-base font-body font-light leading-relaxed"
           >
-            An atmosphere as carefully crafted as our menu — where warm lighting, intimate spaces, and considered design come together.
+            {t('gallery.subtitle')}
           </motion.p>
 
           {!showGallery && (
@@ -51,7 +54,7 @@ export default function Gallery({ images }: GalleryProps) {
                 onClick={() => setShowGallery(true)}
                 className="btn-primary"
               >
-                Visit LIORA
+                {t('gallery.visitButton')}
               </button>
             </motion.div>
           )}
@@ -79,7 +82,7 @@ export default function Gallery({ images }: GalleryProps) {
                   <div className={`relative overflow-hidden ${img.aspect === '16/9' ? 'aspect-[16/9]' : i % 3 === 1 ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
                     <Image
                       src={img.src}
-                      alt={img.alt}
+                      alt={tr(img.alt)}
                       fill
                       className="object-cover transition-transform duration-700 group-hover:scale-105"
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -88,7 +91,7 @@ export default function Gallery({ images }: GalleryProps) {
                     <div className="absolute inset-0 bg-luxury-black/0 group-hover:bg-luxury-black/30 transition-all duration-500" />
                     <div className="absolute inset-0 border border-gold/0 group-hover:border-gold/30 transition-all duration-500" />
                     <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-400">
-                      <p className="text-cream/80 text-xs font-body tracking-wide">{img.alt}</p>
+                      <p className="text-cream/80 text-xs font-body tracking-wide">{tr(img.alt)}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -118,7 +121,7 @@ export default function Gallery({ images }: GalleryProps) {
             >
               <Image
                 src={lightbox.src}
-                alt={lightbox.alt}
+                alt={tr(lightbox.alt)}
                 fill
                 className="object-contain"
                 sizes="90vw"
@@ -127,7 +130,7 @@ export default function Gallery({ images }: GalleryProps) {
             <button
               className="absolute top-6 right-6 w-10 h-10 border border-gold/30 flex items-center justify-center text-cream/70 hover:text-gold hover:border-gold transition-all duration-300"
               onClick={() => setLightbox(null)}
-              aria-label="Close lightbox"
+              aria-label={t('gallery.closeLightboxAria')}
             >
               <X size={18} />
             </button>

@@ -1,5 +1,8 @@
+'use client'
+
 import { NAV_LINKS, CONTACT_INFO, OPENING_HOURS } from '@/lib/constants'
 import { MapPin, Phone, Mail } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const SocialLinks = [
   {
@@ -35,6 +38,7 @@ const SocialLinks = [
 
 export default function Footer() {
   const year = new Date().getFullYear()
+  const { t, tr } = useLanguage()
 
   return (
     <footer className="bg-luxury-dark border-t border-gold/10">
@@ -45,7 +49,7 @@ export default function Footer() {
           <div className="lg:col-span-1">
             <span className="font-display text-2xl tracking-[0.35em] text-cream">LIORA</span>
             <p className="mt-4 text-cream-dark text-sm leading-relaxed font-body font-light max-w-xs">
-              Where every meal becomes a memory. Fine Mediterranean dining crafted with passion and served with excellence.
+              {t('footer.tagline')}
             </p>
             <div className="flex gap-4 mt-6">
               {SocialLinks.map(({ label, href, icon }) => (
@@ -63,7 +67,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">Explore</h4>
+            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">{t('footer.explore')}</h4>
             <ul className="space-y-3">
               {NAV_LINKS.map((link) => (
                 <li key={link.href}>
@@ -71,7 +75,7 @@ export default function Footer() {
                     href={link.href}
                     className="text-cream-dark text-sm hover:text-gold transition-colors duration-300 font-body"
                   >
-                    {link.label}
+                    {tr(link.label)}
                   </a>
                 </li>
               ))}
@@ -80,11 +84,11 @@ export default function Footer() {
 
           {/* Opening Hours */}
           <div>
-            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">Hours</h4>
+            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">{t('footer.hours')}</h4>
             <ul className="space-y-3">
               {OPENING_HOURS.map((item) => (
-                <li key={item.days}>
-                  <p className="text-cream-dark text-xs font-body uppercase tracking-wide">{item.days}</p>
+                <li key={tr(item.days)}>
+                  <p className="text-cream-dark text-xs font-body uppercase tracking-wide">{tr(item.days)}</p>
                   <p className="text-cream text-sm font-body mt-0.5">{item.hours}</p>
                 </li>
               ))}
@@ -93,7 +97,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">Contact</h4>
+            <h4 className="font-display text-sm text-cream tracking-widest uppercase mb-6">{t('footer.contact')}</h4>
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin size={14} className="text-gold mt-1 shrink-0" />
@@ -120,10 +124,10 @@ export default function Footer() {
       <div className="border-t border-gold/10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-cream-dark text-xs font-body">
-            © {year} LIORA Restaurant. All rights reserved.
+            {t('footer.rights', { year })}
           </p>
           <div className="flex gap-6">
-            {['Privacy Policy', 'Terms of Service'].map((item) => (
+            {[t('footer.privacyPolicy'), t('footer.termsOfService')].map((item) => (
               <a key={item} href="#" className="text-cream-dark text-xs hover:text-gold transition-colors duration-300 font-body">
                 {item}
               </a>

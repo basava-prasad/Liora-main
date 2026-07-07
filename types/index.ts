@@ -1,20 +1,27 @@
+export type Locale = 'en' | 'fi'
+
+export interface LocalizedText {
+  en: string
+  fi: string
+}
+
 export interface MenuItem {
   id: string
-  name: string
-  description?: string
-  price: string
+  name: LocalizedText
+  description?: LocalizedText
+  price: LocalizedText
   image?: string
   featured?: boolean
   stars?: number
-  note?: string
+  note?: LocalizedText
   dietary?: ('vegetarian' | 'vegan' | 'gluten-free' | 'halal')[]
 }
 
 export interface MenuCategory {
   id: string
-  name: string
+  name: LocalizedText
   icon: string
-  description?: string
+  description?: LocalizedText
   items: MenuItem[]
 }
 
@@ -27,14 +34,15 @@ export interface Review {
   name: string
   initials: string
   rating: number
-  review: string
-  date: string
-  dish?: string
+  review: LocalizedText
+  date: LocalizedText
+  dish?: LocalizedText
 }
 
 export interface GalleryImage {
   src: string
-  alt: string
+  alt: LocalizedText
+  aspect?: string
 }
 
 export interface ReservationFormData {

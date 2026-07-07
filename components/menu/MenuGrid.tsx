@@ -2,12 +2,15 @@
 
 import DishCard from './DishCard'
 import type { MenuItem } from '@/types'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function MenuGrid({ items }: { items: MenuItem[] }) {
+  const { t } = useLanguage()
+
   if (items.length === 0) {
     return (
       <div className="py-16 text-center">
-        <p className="text-cream-dark font-body text-sm">No dishes found.</p>
+        <p className="text-cream-dark font-body text-sm">{t('menu.noResults')}</p>
       </div>
     )
   }

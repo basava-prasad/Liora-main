@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
 import type { MenuItem } from '@/types'
 import { cn } from '@/lib/utils'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface DishCardProps {
   item: MenuItem
@@ -12,6 +13,8 @@ interface DishCardProps {
 }
 
 export default function DishCard({ item, index = 0 }: DishCardProps) {
+  const { tr } = useLanguage()
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -26,7 +29,7 @@ export default function DishCard({ item, index = 0 }: DishCardProps) {
           <div className="relative aspect-[16/10] overflow-hidden">
             <Image
               src={item.image}
-              alt={item.name}
+              alt={tr(item.name)}
               fill
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
@@ -50,18 +53,18 @@ export default function DishCard({ item, index = 0 }: DishCardProps) {
           <div className="flex items-start justify-between gap-3">
             <div className="flex-1 min-w-0">
               <div className="flex items-center gap-2 mb-1.5">
-                <h3 className="font-display text-base text-cream leading-tight truncate">{item.name}</h3>
+                <h3 className="font-display text-base text-cream leading-tight truncate">{tr(item.name)}</h3>
                 {item.note && (
                   <span className="shrink-0 text-[9px] uppercase tracking-widest text-gold/60 font-body border border-gold/20 px-1.5 py-0.5">
-                    {item.note}
+                    {tr(item.note)}
                   </span>
                 )}
               </div>
               {item.description && (
-                <p className="text-cream-dark text-xs font-body leading-relaxed line-clamp-2">{item.description}</p>
+                <p className="text-cream-dark text-xs font-body leading-relaxed line-clamp-2">{tr(item.description)}</p>
               )}
             </div>
-            <span className="shrink-0 font-body font-semibold text-gold text-sm whitespace-nowrap">{item.price}</span>
+            <span className="shrink-0 font-body font-semibold text-gold text-sm whitespace-nowrap">{tr(item.price)}</span>
           </div>
         </div>
       </motion.div>

@@ -7,6 +7,7 @@ import Section from '@/components/common/Section'
 import { SIGNATURE_DISHES } from '@/lib/constants'
 import { staggerContainer, fadeInUp, scaleIn } from '@/lib/animations'
 import { Star, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 function StarBadge({ count }: { count: number }) {
   if (count < 2) return null
@@ -23,6 +24,7 @@ export default function SignatureDishes() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const { t, tr } = useLanguage()
 
   const updateScrollState = () => {
     const el = scrollRef.current
@@ -50,18 +52,18 @@ export default function SignatureDishes() {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.p variants={fadeInUp} className="section-label mb-4">
-            Culinary Masterpieces
+            {t('signatureDishes.label')}
           </motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            Signature{' '}
-            <span className="italic text-gold">Creations</span>
+            {t('signatureDishes.titleMain')}{' '}
+            <span className="italic text-gold">{t('signatureDishes.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
           <motion.p
             variants={fadeInUp}
             className="mt-5 text-cream-muted max-w-xl mx-auto text-base font-body font-light leading-relaxed"
           >
-            Twelve dishes that define LIORA — each one a celebration of craft, flavour, and the finest ingredients.
+            {t('signatureDishes.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -71,7 +73,7 @@ export default function SignatureDishes() {
             onClick={() => scroll('left')}
             disabled={!canScrollLeft}
             className="w-10 h-10 border border-gold/20 flex items-center justify-center text-cream-dark hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Scroll left"
+            aria-label={t('signatureDishes.scrollLeftAria')}
           >
             <ChevronLeft size={16} />
           </button>
@@ -79,7 +81,7 @@ export default function SignatureDishes() {
             onClick={() => scroll('right')}
             disabled={!canScrollRight}
             className="w-10 h-10 border border-gold/20 flex items-center justify-center text-cream-dark hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Scroll right"
+            aria-label={t('signatureDishes.scrollRightAria')}
           >
             <ChevronRight size={16} />
           </button>
@@ -111,7 +113,7 @@ export default function SignatureDishes() {
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
                   src={dish.image}
-                  alt={dish.name}
+                  alt={tr(dish.name)}
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                   sizes="330px"
@@ -128,7 +130,7 @@ export default function SignatureDishes() {
                 {/* Category pill */}
                 <div className="absolute top-3 right-3">
                   <span className="text-[10px] uppercase tracking-widest font-body font-medium text-cream/60 bg-luxury-black/60 backdrop-blur-sm px-2 py-1">
-                    {dish.category}
+                    {tr(dish.category)}
                   </span>
                 </div>
               </div>
@@ -136,10 +138,10 @@ export default function SignatureDishes() {
               {/* Info */}
               <div className="p-5">
                 {dish.for && (
-                  <p className="text-[10px] uppercase tracking-widest text-gold/60 font-body mb-1">{dish.for}</p>
+                  <p className="text-[10px] uppercase tracking-widest text-gold/60 font-body mb-1">{tr(dish.for)}</p>
                 )}
-                <h3 className="font-display text-lg text-cream leading-tight">{dish.name}</h3>
-                <p className="text-cream-dark text-xs font-body mt-2 leading-relaxed line-clamp-2">{dish.description}</p>
+                <h3 className="font-display text-lg text-cream leading-tight">{tr(dish.name)}</h3>
+                <p className="text-cream-dark text-xs font-body mt-2 leading-relaxed line-clamp-2">{tr(dish.description)}</p>
                 <div className="flex items-center justify-between mt-4 pt-4 border-t border-luxury-border">
                   <span className="font-body font-semibold text-gold text-base">{dish.price}</span>
                   <motion.a
@@ -147,7 +149,7 @@ export default function SignatureDishes() {
                     className="text-xs text-cream/40 hover:text-gold transition-colors duration-300 font-body uppercase tracking-wider"
                     whileHover={{ x: 3 }}
                   >
-                    View →
+                    {t('signatureDishes.viewLink')}
                   </motion.a>
                 </div>
               </div>

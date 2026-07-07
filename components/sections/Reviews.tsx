@@ -6,6 +6,7 @@ import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react'
 import Section from '@/components/common/Section'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 import type { Review } from '@/types'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface ReviewsProps {
   reviews: Review[]
@@ -28,6 +29,7 @@ function StarRating({ rating }: { rating: number }) {
 export default function Reviews({ reviews }: ReviewsProps) {
   const [current, setCurrent] = useState(0)
   const [direction, setDirection] = useState(1)
+  const { t, tr } = useLanguage()
 
   const go = (dir: 1 | -1) => {
     setDirection(dir)
@@ -47,10 +49,10 @@ export default function Reviews({ reviews }: ReviewsProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <motion.p variants={fadeInUp} className="section-label mb-4">Guest Voices</motion.p>
+          <motion.p variants={fadeInUp} className="section-label mb-4">{t('reviews.label')}</motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            What Our Guests{' '}
-            <span className="italic text-gold">Say</span>
+            {t('reviews.titleMain')}{' '}
+            <span className="italic text-gold">{t('reviews.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
         </motion.div>
@@ -78,7 +80,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
                 <StarRating rating={review.rating} />
 
                 <p className="font-accent text-xl md:text-2xl text-cream italic leading-relaxed mt-6 mb-8">
-                  &ldquo;{review.review}&rdquo;
+                  &ldquo;{tr(review.review)}&rdquo;
                 </p>
 
                 <div className="flex flex-col items-center gap-1">
@@ -86,10 +88,10 @@ export default function Reviews({ reviews }: ReviewsProps) {
                     <span className="font-display text-sm text-gold">{review.initials}</span>
                   </div>
                   <p className="font-display text-base text-cream">{review.name}</p>
-                  <p className="text-cream-dark text-xs font-body mt-0.5">{review.date}</p>
+                  <p className="text-cream-dark text-xs font-body mt-0.5">{tr(review.date)}</p>
                   {review.dish && (
                     <p className="text-gold/60 text-[11px] font-body uppercase tracking-widest mt-1">
-                      {review.dish}
+                      {tr(review.dish)}
                     </p>
                   )}
                 </div>
@@ -102,7 +104,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             <button
               onClick={() => go(-1)}
               className="w-10 h-10 border border-gold/20 flex items-center justify-center text-cream-dark hover:text-gold hover:border-gold transition-all duration-300"
-              aria-label="Previous review"
+              aria-label={t('reviews.previousAria')}
             >
               <ChevronLeft size={16} />
             </button>
@@ -116,14 +118,14 @@ export default function Reviews({ reviews }: ReviewsProps) {
                       ? 'w-6 h-1 bg-gold'
                       : 'w-1 h-1 bg-gold/30 hover:bg-gold/60 rounded-full'
                   }`}
-                  aria-label={`Review ${i + 1}`}
+                  aria-label={t('reviews.dotAria', { n: i + 1 })}
                 />
               ))}
             </div>
             <button
               onClick={() => go(1)}
               className="w-10 h-10 border border-gold/20 flex items-center justify-center text-cream-dark hover:text-gold hover:border-gold transition-all duration-300"
-              aria-label="Next review"
+              aria-label={t('reviews.nextAria')}
             >
               <ChevronRight size={16} />
             </button>
@@ -146,7 +148,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
             >
               <StarRating rating={r.rating} />
               <p className="text-cream text-sm font-body leading-relaxed mt-3 mb-4 line-clamp-3 italic">
-                &ldquo;{r.review}&rdquo;
+                &ldquo;{tr(r.review)}&rdquo;
               </p>
               <div className="flex items-center gap-2 border-t border-luxury-border pt-3">
                 <div className="w-7 h-7 bg-gold/10 border border-gold/20 flex items-center justify-center shrink-0">
@@ -154,7 +156,7 @@ export default function Reviews({ reviews }: ReviewsProps) {
                 </div>
                 <div>
                   <p className="text-cream text-xs font-body">{r.name}</p>
-                  <p className="text-cream-dark text-[10px] font-body">{r.date}</p>
+                  <p className="text-cream-dark text-[10px] font-body">{tr(r.date)}</p>
                 </div>
               </div>
             </motion.div>

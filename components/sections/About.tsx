@@ -7,28 +7,18 @@ import { useRef } from 'react'
 import Section, { SectionHeader } from '@/components/common/Section'
 import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/lib/animations'
 import { Flame, Leaf, Star } from 'lucide-react'
-
-const pillars = [
-  {
-    icon: Flame,
-    title: 'Craft',
-    desc: 'Every dish is prepared with meticulous attention — from hand-rolled dolma to our signature charcoal-grilled meats.',
-  },
-  {
-    icon: Leaf,
-    title: 'Authenticity',
-    desc: 'We draw from centuries of Mediterranean and Turkish culinary tradition, honouring the flavours that defined a culture.',
-  },
-  {
-    icon: Star,
-    title: 'Experience',
-    desc: 'Dining at LIORA is more than a meal. It is an occasion crafted from the moment you arrive to the last lingering flavour.',
-  },
-]
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function About() {
   const ref = useRef<HTMLDivElement>(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+  const { t } = useLanguage()
+
+  const pillars = [
+    { icon: Flame, title: t('about.pillarCraftTitle'), desc: t('about.pillarCraftDesc') },
+    { icon: Leaf, title: t('about.pillarAuthenticityTitle'), desc: t('about.pillarAuthenticityDesc') },
+    { icon: Star, title: t('about.pillarExperienceTitle'), desc: t('about.pillarExperienceDesc') },
+  ]
 
   return (
     <Section id="about" className="bg-luxury-dark">
@@ -45,12 +35,11 @@ export default function About() {
             <div className="relative aspect-[4/5] rounded-none overflow-hidden">
               <Image
                 src="/images/chef/interior-6.jpeg"
-                alt="LIORA open kitchen"
+                alt={t('about.imageAlt')}
                 fill
                 className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-luxury-black/20" />
             </div>
             {/* Floating accent card */}
             <motion.div
@@ -61,7 +50,7 @@ export default function About() {
               transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
               <p className="font-display text-3xl gold-text">2019</p>
-              <p className="text-cream-dark text-xs font-body mt-1 tracking-wide uppercase">Est. in Dublin</p>
+              <p className="text-cream-dark text-xs font-body mt-1 tracking-wide uppercase">{t('about.estIn')}</p>
             </motion.div>
             {/* Gold border accent */}
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold/40" />
@@ -75,10 +64,10 @@ export default function About() {
             animate={isInView ? 'visible' : 'hidden'}
           >
             <motion.div variants={fadeInUp}>
-              <p className="section-label mb-4">Our Story</p>
+              <p className="section-label mb-4">{t('about.label')}</p>
               <h2 className="section-title">
-                Born from a Passion<br />
-                <span className="italic text-gold">for the Mediterranean</span>
+                {t('about.titleLine1')}<br />
+                <span className="italic text-gold">{t('about.titleLine2')}</span>
               </h2>
               <div className="gold-divider mt-6 mb-8" />
             </motion.div>
@@ -87,13 +76,13 @@ export default function About() {
               variants={fadeInUp}
               className="text-cream-muted font-body font-light text-base leading-relaxed mb-5"
             >
-              LIORA was born from a simple but profound belief: that food is the most powerful vehicle for culture, memory, and connection. Our founders, inspired by the sun-soaked coastlines of the Mediterranean, set out to create a space where those ancient flavours could be experienced in their most refined form.
+              {t('about.paragraph1')}
             </motion.p>
             <motion.p
               variants={fadeInUp}
               className="text-cream-muted font-body font-light text-base leading-relaxed mb-10"
             >
-              From our hand-stretched pizzas to the slow burn of our charcoal grill, every element at LIORA is an intentional expression of culinary craft. We source the finest ingredients, respect traditional techniques, and add our own creative vision to deliver something truly unforgettable.
+              {t('about.paragraph2')}
             </motion.p>
 
             {/* Pillars */}

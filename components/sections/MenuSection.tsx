@@ -7,6 +7,7 @@ import Section from '@/components/common/Section'
 import MenuGrid from '@/components/menu/MenuGrid'
 import type { MenuCategory } from '@/types'
 import { fadeInUp, staggerContainer } from '@/lib/animations'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface MenuSectionProps {
   categories: MenuCategory[]
@@ -15,6 +16,7 @@ interface MenuSectionProps {
 export default function MenuSection({ categories }: MenuSectionProps) {
   const [activeCategory, setActiveCategory] = useState('all')
   const [query, setQuery] = useState('')
+  const { t, tr, locale } = useLanguage()
 
   const allItems = useMemo(() => categories.flatMap((c) => c.items), [categories])
 
@@ -27,14 +29,14 @@ export default function MenuSection({ categories }: MenuSectionProps) {
     const q = query.toLowerCase()
     return pool.filter(
       (item) =>
-        item.name.toLowerCase().includes(q) ||
-        item.description?.toLowerCase().includes(q)
+        item.name[locale].toLowerCase().includes(q) ||
+        item.description?.[locale].toLowerCase().includes(q)
     )
-  }, [activeCategory, query, allItems, categories])
+  }, [activeCategory, query, allItems, categories, locale])
 
   const tabs = [
-    { id: 'all', name: 'All', icon: '✦' },
-    ...categories.map((c) => ({ id: c.id, name: c.name, icon: c.icon })),
+    { id: 'all', name: t('menu.allTab'), icon: '✦' },
+    ...categories.map((c) => ({ id: c.id, name: tr(c.name), icon: c.icon })),
   ]
 
   return (
@@ -49,18 +51,18 @@ export default function MenuSection({ categories }: MenuSectionProps) {
           viewport={{ once: true, margin: '-80px' }}
         >
           <motion.p variants={fadeInUp} className="section-label mb-4">
-            Our Menu
+            {t('menu.label')}
           </motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            The Full{' '}
-            <span className="italic text-gold">Experience</span>
+            {t('menu.titleMain')}{' '}
+            <span className="italic text-gold">{t('menu.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
           <motion.p
             variants={fadeInUp}
             className="mt-5 text-cream-muted max-w-xl mx-auto text-base font-body font-light leading-relaxed"
           >
-            A complete culinary journey through the Mediterranean — from mezze and charcoal grill to handcrafted pizzas, gourmet burgers, and desserts.
+            {t('menu.subtitle')}
           </motion.p>
         </motion.div>
 
@@ -75,7 +77,7 @@ export default function MenuSection({ categories }: MenuSectionProps) {
           <Search size={15} className="absolute left-4 top-1/2 -translate-y-1/2 text-cream-dark" />
           <input
             type="text"
-            placeholder="Search dishes..."
+            placeholder={t('menu.searchPlaceholder')}
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="w-full bg-luxury-card border border-luxury-border text-cream placeholder:text-cream-dark font-body text-sm pl-10 pr-10 py-3.5 outline-none focus:border-gold/50 transition-colors duration-300"
@@ -84,7 +86,7 @@ export default function MenuSection({ categories }: MenuSectionProps) {
             <button
               onClick={() => setQuery('')}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-cream-dark hover:text-cream transition-colors"
-              aria-label="Clear search"
+              aria-label={t('menu.clearSearchAria')}
             >
               <X size={14} />
             </button>
@@ -118,11 +120,11 @@ export default function MenuSection({ categories }: MenuSectionProps) {
         {/* Results count */}
         <div className="flex items-center justify-between mb-6">
           <p className="text-cream-dark text-xs font-body uppercase tracking-wider">
-            {filteredItems.length} {filteredItems.length === 1 ? 'dish' : 'dishes'}
+            {filteredItems.length} {filteredItems.length === 1 ? t('menu.dish') : t('menu.dishes')}
           </p>
           {query && (
             <p className="text-cream-dark text-xs font-body">
-              Results for &ldquo;<span className="text-gold">{query}</span>&rdquo;
+              {t('menu.resultsFor')} &ldquo;<span className="text-gold">{query}</span>&rdquo;
             </p>
           )}
         </div>

@@ -8,19 +8,22 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle2, Calendar, Clock, Users, User, Mail, Phone, MessageSquare } from 'lucide-react'
 import Section from '@/components/common/Section'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
-import { RESERVATION_TIMES } from '@/lib/constants'
+import { RESERVATION_TIMES, OPENING_HOURS, CONTACT_INFO } from '@/lib/constants'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
-const reservationSchema = z.object({
-  name: z.string().min(2, 'Please enter your full name'),
-  email: z.string().email('Please enter a valid email address'),
-  phone: z.string().min(7, 'Please enter a valid phone number'),
-  date: z.string().min(1, 'Please select a date'),
-  time: z.string().min(1, 'Please select a time'),
-  guests: z.string().min(1, 'Please select number of guests'),
-  specialRequests: z.string().optional(),
-})
+function buildReservationSchema(t: (key: string) => string) {
+  return z.object({
+    name: z.string().min(2, t('reservation.errorName')),
+    email: z.string().email(t('reservation.errorEmail')),
+    phone: z.string().min(7, t('reservation.errorPhone')),
+    date: z.string().min(1, t('reservation.errorDate')),
+    time: z.string().min(1, t('reservation.errorTime')),
+    guests: z.string().min(1, t('reservation.errorGuests')),
+    specialRequests: z.string().optional(),
+  })
+}
 
-type ReservationValues = z.infer<typeof reservationSchema>
+type ReservationValues = z.infer<ReturnType<typeof buildReservationSchema>>
 
 function FieldWrapper({
   label,
@@ -51,6 +54,9 @@ const inputClass =
 export default function Reservation() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const { t, tr } = useLanguage()
+
+  const reservationSchema = buildReservationSchema(t)
 
   const {
     register,
@@ -68,6 +74,7 @@ export default function Reservation() {
   }
 
   const today = new Date().toISOString().split('T')[0]
+  const telHref = `tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`
 
   return (
     <Section id="reservations" className="bg-luxury-dark">
@@ -81,41 +88,37 @@ export default function Reservation() {
             viewport={{ once: true, margin: '-80px' }}
           >
             <motion.p variants={fadeInUp} className="section-label mb-4">
-              Book Your Table
+              {t('reservation.label')}
             </motion.p>
             <motion.h2 variants={fadeInUp} className="section-title">
-              Reserve Your{' '}
-              <span className="italic text-gold">Experience</span>
+              {t('reservation.titleMain')}{' '}
+              <span className="italic text-gold">{t('reservation.titleAccent')}</span>
             </motion.h2>
             <motion.div variants={fadeInUp} className="gold-divider mt-6 mb-8" />
             <motion.p
               variants={fadeInUp}
               className="text-cream-muted font-body font-light text-base leading-relaxed mb-8"
             >
-              Secure your table at LIORA and let us take care of everything else. Whether it is an intimate dinner for two or a celebration for the whole family, we will make it memorable.
+              {t('reservation.intro')}
             </motion.p>
 
             <motion.div variants={staggerContainer} className="space-y-1 mb-10">
-              {[
-                { days: 'Monday – Thursday', hours: '12:00 – 23:00' },
-                { days: 'Friday – Saturday', hours: '11:00 – 00:00' },
-                { days: 'Sunday', hours: '12:00 – 22:00' },
-              ].map((item) => (
+              {OPENING_HOURS.map((item) => (
                 <motion.div
-                  key={item.days}
+                  key={tr(item.days)}
                   variants={fadeInUp}
                   className="flex items-center justify-between py-3.5 border-b border-luxury-border"
                 >
-                  <span className="text-cream-muted text-sm font-body">{item.days}</span>
+                  <span className="text-cream-muted text-sm font-body">{tr(item.days)}</span>
                   <span className="text-cream text-sm font-body font-medium">{item.hours}</span>
                 </motion.div>
               ))}
             </motion.div>
 
             <motion.p variants={fadeInUp} className="text-cream-dark text-sm font-body leading-relaxed">
-              For parties of 8 or more, please call us directly at{' '}
-              <a href="tel:+35315550198" className="text-gold hover:text-gold-light transition-colors duration-300">
-                +353 1 555 0198
+              {t('reservation.largePartyNote')}{' '}
+              <a href={telHref} className="text-gold hover:text-gold-light transition-colors duration-300">
+                {CONTACT_INFO.phone}
               </a>
             </motion.p>
           </motion.div>
@@ -144,15 +147,15 @@ export default function Reservation() {
                   >
                     <CheckCircle2 size={52} className="text-gold mx-auto mb-6" />
                   </motion.div>
-                  <h3 className="font-display text-2xl text-cream mb-3">Reservation Received</h3>
+                  <h3 className="font-display text-2xl text-cream mb-3">{t('reservation.successTitle')}</h3>
                   <p className="text-cream-muted font-body font-light text-sm leading-relaxed">
-                    Thank you for choosing LIORA. We have received your reservation request and will confirm via email within a few hours.
+                    {t('reservation.successMessage')}
                   </p>
                   <div className="mt-6 pt-6 border-t border-gold/20">
                     <p className="text-cream-dark text-xs font-body">
-                      Questions? Call us at{' '}
-                      <a href="tel:+35315550198" className="text-gold">
-                        +353 1 555 0198
+                      {t('reservation.questionsCall')}{' '}
+                      <a href={telHref} className="text-gold">
+                        {CONTACT_INFO.phone}
                       </a>
                     </p>
                   </div>
@@ -165,35 +168,35 @@ export default function Reservation() {
                   noValidate
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <FieldWrapper label="Full Name" icon={User} error={errors.name?.message}>
+                    <FieldWrapper label={t('reservation.fieldFullName')} icon={User} error={errors.name?.message}>
                       <input
                         {...register('name')}
                         type="text"
-                        placeholder="Your name"
+                        placeholder={t('reservation.placeholderName')}
                         className={inputClass}
                       />
                     </FieldWrapper>
-                    <FieldWrapper label="Email" icon={Mail} error={errors.email?.message}>
+                    <FieldWrapper label={t('reservation.fieldEmail')} icon={Mail} error={errors.email?.message}>
                       <input
                         {...register('email')}
                         type="email"
-                        placeholder="your@email.com"
+                        placeholder={t('reservation.placeholderEmail')}
                         className={inputClass}
                       />
                     </FieldWrapper>
                   </div>
 
-                  <FieldWrapper label="Phone" icon={Phone} error={errors.phone?.message}>
+                  <FieldWrapper label={t('reservation.fieldPhone')} icon={Phone} error={errors.phone?.message}>
                     <input
                       {...register('phone')}
                       type="tel"
-                      placeholder="+353 1 234 5678"
+                      placeholder={t('reservation.placeholderPhone')}
                       className={inputClass}
                     />
                   </FieldWrapper>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <FieldWrapper label="Date" icon={Calendar} error={errors.date?.message}>
+                    <FieldWrapper label={t('reservation.fieldDate')} icon={Calendar} error={errors.date?.message}>
                       <input
                         {...register('date')}
                         type="date"
@@ -201,33 +204,33 @@ export default function Reservation() {
                         className={`${inputClass} [color-scheme:dark]`}
                       />
                     </FieldWrapper>
-                    <FieldWrapper label="Time" icon={Clock} error={errors.time?.message}>
+                    <FieldWrapper label={t('reservation.fieldTime')} icon={Clock} error={errors.time?.message}>
                       <select {...register('time')} className={inputClass}>
-                        <option value="">Select time</option>
-                        {RESERVATION_TIMES.map((t) => (
-                          <option key={t} value={t}>
-                            {t}
+                        <option value="">{t('reservation.selectTimePlaceholder')}</option>
+                        {RESERVATION_TIMES.map((time) => (
+                          <option key={time} value={time}>
+                            {time}
                           </option>
                         ))}
                       </select>
                     </FieldWrapper>
                   </div>
 
-                  <FieldWrapper label="Guests" icon={Users} error={errors.guests?.message}>
+                  <FieldWrapper label={t('reservation.fieldGuests')} icon={Users} error={errors.guests?.message}>
                     <select {...register('guests')} className={inputClass}>
-                      <option value="">Number of guests</option>
+                      <option value="">{t('reservation.selectGuestsPlaceholder')}</option>
                       {[1, 2, 3, 4, 5, 6, 7].map((n) => (
                         <option key={n} value={String(n)}>
-                          {n} {n === 1 ? 'Guest' : 'Guests'}
+                          {n} {n === 1 ? t('reservation.guestSingular') : t('reservation.guestPlural')}
                         </option>
                       ))}
                     </select>
                   </FieldWrapper>
 
-                  <FieldWrapper label="Special Requests" icon={MessageSquare}>
+                  <FieldWrapper label={t('reservation.fieldSpecialRequests')} icon={MessageSquare}>
                     <textarea
                       {...register('specialRequests')}
-                      placeholder="Allergies, celebrations, seating preferences..."
+                      placeholder={t('reservation.specialRequestsPlaceholder')}
                       rows={4}
                       className={`${inputClass} resize-none`}
                     />
@@ -247,15 +250,15 @@ export default function Reservation() {
                           animate={{ rotate: 360 }}
                           transition={{ repeat: Infinity, duration: 0.8, ease: 'linear' }}
                         />
-                        Confirming Reservation…
+                        {t('reservation.submitButtonLoading')}
                       </span>
                     ) : (
-                      'Confirm Reservation'
+                      t('reservation.submitButton')
                     )}
                   </motion.button>
 
                   <p className="text-center text-cream-dark text-[11px] font-body leading-relaxed">
-                    By submitting you agree to our cancellation policy. Reservations held for 15 minutes.
+                    {t('reservation.disclaimer')}
                   </p>
                 </motion.form>
               )}

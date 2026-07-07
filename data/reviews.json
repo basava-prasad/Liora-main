@@ -5,72 +5,96 @@
       "name": "Sophia Laurent",
       "initials": "SL",
       "rating": 5,
-      "review": "An extraordinary dining experience. The Liora Mixed Grill is simply the finest charcoal grill I have tasted outside of Istanbul. The atmosphere is refined yet warm — we will absolutely be back.",
-      "date": "March 2025",
-      "dish": "Liora Mixed Grill"
+      "review": {
+        "en": "An extraordinary dining experience. The Liora Mixed Grill is simply the finest charcoal grill I have tasted outside of Istanbul. The atmosphere is refined yet warm — we will absolutely be back.",
+        "fi": "Poikkeuksellisen hieno ruokailukokemus. Liora Sekagrilli on yksinkertaisesti parasta hiiligrilliä, jota olen maistanut Istanbulin ulkopuolella. Tunnelma on hienostunut mutta silti lämmin — palaamme ehdottomasti."
+      },
+      "date": { "en": "March 2025", "fi": "Maaliskuu 2025" },
+      "dish": { "en": "Liora Mixed Grill", "fi": "Liora Sekagrilli" }
     },
     {
       "id": "r2",
       "name": "Marcus Hoffmann",
       "initials": "MH",
       "rating": 5,
-      "review": "The Burrata Pizza is a revelation. That combination of perfectly charred crust and cool, creamy burrata is genuinely one of the best things I have eaten this year. The service matches the quality.",
-      "date": "April 2025",
-      "dish": "Burrata Pizza"
+      "review": {
+        "en": "The Burrata Pizza is a revelation. That combination of perfectly charred crust and cool, creamy burrata is genuinely one of the best things I have eaten this year. The service matches the quality.",
+        "fi": "Burrata-pizza on ilmestys. Täydellisesti paahtuneen pohjan ja viileän, kermaisen burratan yhdistelmä on aidosti yksi parhaista asioista, joita olen tänä vuonna syönyt. Palvelu on laadun veroista."
+      },
+      "date": { "en": "April 2025", "fi": "Huhtikuu 2025" },
+      "dish": { "en": "Burrata Pizza", "fi": "Burrata-pizza" }
     },
     {
       "id": "r3",
       "name": "Aisha Nkrumah",
       "initials": "AN",
       "rating": 5,
-      "review": "I hosted a business dinner for eight here and LIORA exceeded every expectation. Staff were impeccable, food beautifully presented, and the lamb chops were cooked to absolute perfection.",
-      "date": "February 2025",
-      "dish": "Lamb Chops"
+      "review": {
+        "en": "I hosted a business dinner for eight here and LIORA exceeded every expectation. Staff were impeccable, food beautifully presented, and the lamb chops were cooked to absolute perfection.",
+        "fi": "Järjestin täällä liikelounaan kahdeksalle hengelle, ja LIORA ylitti kaikki odotukset. Henkilökunta oli moitteetonta, ruoka kauniisti esillepantua, ja lampaankyljykset olivat täydellisesti kypsennettyjä."
+      },
+      "date": { "en": "February 2025", "fi": "Helmikuu 2025" },
+      "dish": { "en": "Lamb Chops", "fi": "Lampaankyljykset" }
     },
     {
       "id": "r4",
       "name": "James Calloway",
       "initials": "JC",
       "rating": 5,
-      "review": "The Boss Double Burger deserves its name. Two perfectly charcoal-grilled patties, extraordinary depth of flavour, and that sauce — I am still thinking about it three weeks later.",
-      "date": "May 2025",
-      "dish": "The Boss Double"
+      "review": {
+        "en": "The Boss Double Burger deserves its name. Two perfectly charcoal-grilled patties, extraordinary depth of flavour, and that sauce — I am still thinking about it three weeks later.",
+        "fi": "The Boss Double -burgeri ansaitsee nimensä. Kaksi täydellisesti hiiligrillattua pihviä, poikkeuksellisen syvä maku ja se kastike — ajattelen sitä yhä kolme viikkoa myöhemmin."
+      },
+      "date": { "en": "May 2025", "fi": "Toukokuu 2025" },
+      "dish": { "en": "The Boss Double", "fi": "The Boss Double" }
     },
     {
       "id": "r5",
       "name": "Elena Vassiliev",
       "initials": "EV",
       "rating": 5,
-      "review": "Brought my parents here for their anniversary. The Meze Plate was a journey through the Mediterranean — each component clearly made with real care. LIORA has become our family's special occasion restaurant.",
-      "date": "January 2025",
-      "dish": "Meze Plate"
+      "review": {
+        "en": "Brought my parents here for their anniversary. The Meze Plate was a journey through the Mediterranean — each component clearly made with real care. LIORA has become our family's special occasion restaurant.",
+        "fi": "Toin vanhempani tänne heidän hääpäivänään. Mezelautanen oli matka Välimeren makuihin — jokainen osa oli selvästi valmistettu suurella huolella. LIORAsta on tullut perheemme juhlaravintola."
+      },
+      "date": { "en": "January 2025", "fi": "Tammikuu 2025" },
+      "dish": { "en": "Meze Plate", "fi": "Mezelautanen" }
     },
     {
       "id": "r6",
       "name": "Thomas Bergmann",
       "initials": "TB",
       "rating": 5,
-      "review": "The Grilled Salmon was cooked to perfection — flaky, moist, beautifully seasoned. The ambience is sophisticated without feeling stuffy. Exactly what a fine dining experience should feel like.",
-      "date": "March 2025",
-      "dish": "Grilled Salmon"
+      "review": {
+        "en": "The Grilled Salmon was cooked to perfection — flaky, moist, beautifully seasoned. The ambience is sophisticated without feeling stuffy. Exactly what a fine dining experience should feel like.",
+        "fi": "Grillattu lohi oli kypsennetty täydellisesti — mureaa, mehukasta ja kauniisti maustettua. Tunnelma on hienostunut mutta ei tunkkainen. Juuri sellaista kuin hienostuneen ruokailukokemuksen tulisi olla."
+      },
+      "date": { "en": "March 2025", "fi": "Maaliskuu 2025" },
+      "dish": { "en": "Grilled Salmon", "fi": "Grillattu lohi" }
     },
     {
       "id": "r7",
       "name": "Priya Chandran",
       "initials": "PC",
       "rating": 4,
-      "review": "Exceptional quality across the board. The Hot Honey Pepperoni pizza has the perfect balance of sweet heat. LIORA clearly takes pride in every single detail — from the plating to the warm service.",
-      "date": "April 2025",
-      "dish": "Hot Honey Pepperoni"
+      "review": {
+        "en": "Exceptional quality across the board. The Hot Honey Pepperoni pizza has the perfect balance of sweet heat. LIORA clearly takes pride in every single detail — from the plating to the warm service.",
+        "fi": "Poikkeuksellisen laadukasta joka osa-alueella. Hot Honey Pepperoni -pizzassa on täydellinen tasapaino makeutta ja tulisuutta. LIORA on selvästi ylpeä jokaisesta yksityiskohdasta — annostelusta lämpimään palveluun."
+      },
+      "date": { "en": "April 2025", "fi": "Huhtikuu 2025" },
+      "dish": { "en": "Hot Honey Pepperoni", "fi": "Hot Honey Pepperoni" }
     },
     {
       "id": "r8",
       "name": "Rafael Mendes",
       "initials": "RM",
       "rating": 5,
-      "review": "Took my wife here for our anniversary. From the moment we arrived, the experience was seamless. The Baklava and Ice Cream was the perfect ending to a truly perfect evening.",
-      "date": "February 2025",
-      "dish": "Baklava & Ice Cream"
+      "review": {
+        "en": "Took my wife here for our anniversary. From the moment we arrived, the experience was seamless. The Baklava and Ice Cream was the perfect ending to a truly perfect evening.",
+        "fi": "Toin vaimoni tänne hääpäivänämme. Saapumishetkestä alkaen kokemus oli saumaton. Baklava ja jäätelö oli täydellinen päätös todella täydelliselle illalle."
+      },
+      "date": { "en": "February 2025", "fi": "Helmikuu 2025" },
+      "dish": { "en": "Baklava & Ice Cream", "fi": "Baklava & jäätelö" }
     }
   ]
 }

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/components/providers/LenisProvider'
+import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -52,9 +53,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}>
       <body className="font-body bg-luxury-black text-cream antialiased">
-        <LenisProvider>
-          {children}
-        </LenisProvider>
+        <LanguageProvider>
+          <LenisProvider>
+            {children}
+          </LenisProvider>
+        </LanguageProvider>
       </body>
     </html>
   )

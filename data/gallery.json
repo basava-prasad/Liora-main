@@ -1,11 +1,33 @@
 {
   "images": [
-    { "src": "/images/ambience/Interior-1.jpeg", "alt": "LIORA Restaurant Interior", "aspect": "16/9" },
-    { "src": "/images/ambience/interior-2.jpeg", "alt": "LIORA Dining Area" },
-    { "src": "/images/ambience/interior-3.jpeg", "alt": "LIORA Restaurant Ambience" },
-    { "src": "/images/ambience/interior-4.jpeg", "alt": "LIORA Table Setting" },
-    { "src": "/images/ambience/interior-5.jpeg", "alt": "LIORA Restaurant Atmosphere" },
-    { "src": "/images/chef/interior-6.jpeg", "alt": "LIORA Open Kitchen" },
-    { "src": "/images/chef/interior-7.jpeg", "alt": "LIORA Chef's Kitchen" }
+    {
+      "src": "/images/ambience/Interior-1.jpeg",
+      "alt": { "en": "LIORA Restaurant Interior", "fi": "LIORA-ravintolan sisätilat" },
+      "aspect": "16/9"
+    },
+    {
+      "src": "/images/ambience/interior-2.jpeg",
+      "alt": { "en": "LIORA Dining Area", "fi": "LIORAn ruokailutila" }
+    },
+    {
+      "src": "/images/ambience/interior-3.jpeg",
+      "alt": { "en": "LIORA Restaurant Ambience", "fi": "LIORA-ravintolan tunnelma" }
+    },
+    {
+      "src": "/images/ambience/interior-4.jpeg",
+      "alt": { "en": "LIORA Table Setting", "fi": "LIORAn pöytäasetelma" }
+    },
+    {
+      "src": "/images/ambience/interior-5.jpeg",
+      "alt": { "en": "LIORA Restaurant Atmosphere", "fi": "LIORA-ravintolan ilmapiiri" }
+    },
+    {
+      "src": "/images/chef/interior-6.jpeg",
+      "alt": { "en": "LIORA Open Kitchen", "fi": "LIORAn avokeittiö" }
+    },
+    {
+      "src": "/images/chef/interior-7.jpeg",
+      "alt": { "en": "LIORA Chef's Kitchen", "fi": "LIORAn kokin keittiö" }
+    }
   ]
 }

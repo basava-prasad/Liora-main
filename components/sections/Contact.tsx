@@ -5,29 +5,32 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import Section from '@/components/common/Section'
 import { staggerContainer, fadeInUp, slideInLeft } from '@/lib/animations'
 import { CONTACT_INFO, OPENING_HOURS } from '@/lib/constants'
-
-const contactItems = [
-  {
-    icon: MapPin,
-    label: 'Address',
-    value: CONTACT_INFO.address,
-    href: '#',
-  },
-  {
-    icon: Phone,
-    label: 'Phone',
-    value: CONTACT_INFO.phone,
-    href: `tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`,
-  },
-  {
-    icon: Mail,
-    label: 'Email',
-    value: CONTACT_INFO.email,
-    href: `mailto:${CONTACT_INFO.email}`,
-  },
-]
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export default function Contact() {
+  const { t, tr } = useLanguage()
+
+  const contactItems = [
+    {
+      icon: MapPin,
+      label: t('contact.addressLabel'),
+      value: CONTACT_INFO.address,
+      href: '#',
+    },
+    {
+      icon: Phone,
+      label: t('contact.phoneLabel'),
+      value: CONTACT_INFO.phone,
+      href: `tel:${CONTACT_INFO.phone.replace(/\s/g, '')}`,
+    },
+    {
+      icon: Mail,
+      label: t('contact.emailLabel'),
+      value: CONTACT_INFO.email,
+      href: `mailto:${CONTACT_INFO.email}`,
+    },
+  ]
+
   return (
     <Section id="contact" className="bg-luxury-black">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -39,10 +42,10 @@ export default function Contact() {
           whileInView="visible"
           viewport={{ once: true, margin: '-80px' }}
         >
-          <motion.p variants={fadeInUp} className="section-label mb-4">Find Us</motion.p>
+          <motion.p variants={fadeInUp} className="section-label mb-4">{t('contact.label')}</motion.p>
           <motion.h2 variants={fadeInUp} className="section-title">
-            Get in{' '}
-            <span className="italic text-gold">Touch</span>
+            {t('contact.titleMain')}{' '}
+            <span className="italic text-gold">{t('contact.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
         </motion.div>
@@ -65,8 +68,8 @@ export default function Contact() {
                 <div className="absolute -inset-4 border border-gold/10 rounded-full animate-ping opacity-30" />
               </div>
               <p className="mt-6 font-display text-lg text-cream text-center px-6">
-                14 Mediterranean Quarter<br />
-                <span className="text-gold text-base">Dublin 2, Ireland</span>
+                Länsiranta 8<br />
+                <span className="text-gold text-base">Salo 24100</span>
               </p>
               <a
                 href="https://maps.google.com"
@@ -74,13 +77,13 @@ export default function Contact() {
                 rel="noopener noreferrer"
                 className="mt-6 btn-outline text-xs py-2.5 px-6"
               >
-                Open in Maps
+                {t('contact.openInMaps')}
               </a>
             </div>
             {/* Decorative grid lines */}
             <div className="absolute inset-0 opacity-5"
               style={{
-                backgroundImage: 'linear-gradient(#7A1515 1px, transparent 1px), linear-gradient(90deg, #7A1515 1px, transparent 1px)',
+                backgroundImage: 'linear-gradient(#6B4226 1px, transparent 1px), linear-gradient(90deg, #6B4226 1px, transparent 1px)',
                 backgroundSize: '40px 40px',
               }}
             />
@@ -121,15 +124,15 @@ export default function Contact() {
             <motion.div variants={fadeInUp}>
               <div className="flex items-center gap-3 mb-5">
                 <Clock size={16} className="text-gold" />
-                <p className="text-cream-dark text-xs font-body uppercase tracking-widest">Opening Hours</p>
+                <p className="text-cream-dark text-xs font-body uppercase tracking-widest">{t('contact.openingHoursLabel')}</p>
               </div>
               <div className="space-y-3">
                 {OPENING_HOURS.map((item) => (
                   <div
-                    key={item.days}
+                    key={tr(item.days)}
                     className="flex items-center justify-between py-3 border-b border-luxury-border last:border-0"
                   >
-                    <span className="text-cream-muted text-sm font-body">{item.days}</span>
+                    <span className="text-cream-muted text-sm font-body">{tr(item.days)}</span>
                     <span className="text-cream text-sm font-body font-medium">{item.hours}</span>
                   </div>
                 ))}
