@@ -34,9 +34,9 @@ export interface Review {
   name: string
   initials: string
   rating: number
-  review: LocalizedText
-  date: LocalizedText
-  dish?: LocalizedText
+  review: string
+  date: string
+  dish?: string
 }
 
 export interface GalleryImage {

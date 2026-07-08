@@ -10,10 +10,14 @@ import Reservation from '@/components/sections/Reservation'
 import Contact from '@/components/sections/Contact'
 import Footer from '@/components/layout/Footer'
 import menuData from '@/data/menu.json'
-import reviewsData from '@/data/reviews.json'
 import galleryData from '@/data/gallery.json'
+import { getApprovedReviews } from '@/lib/data'
 
-export default function Home() {
+export const dynamic = 'force-dynamic'
+
+export default async function Home() {
+  const reviews = await getApprovedReviews()
+
   return (
     <main className="bg-luxury-black overflow-hidden">
       <Navbar />
@@ -23,7 +27,7 @@ export default function Home() {
       <MenuSection categories={menuData.categories} />
       <ChefSection />
       <Gallery images={galleryData.images} />
-      <Reviews reviews={reviewsData.reviews} />
+      <Reviews reviews={reviews} />
       <Reservation />
       <Contact />
       <Footer />

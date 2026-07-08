@@ -54,6 +54,7 @@ const inputClass =
 export default function Reservation() {
   const [submitted, setSubmitted] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [submitError, setSubmitError] = useState<string | null>(null)
   const { t, tr } = useLanguage()
 
   const reservationSchema = buildReservationSchema(t)
@@ -66,11 +67,22 @@ export default function Reservation() {
     resolver: zodResolver(reservationSchema),
   })
 
-  const onSubmit = async (_values: ReservationValues) => {
+  const onSubmit = async (values: ReservationValues) => {
     setLoading(true)
-    await new Promise((resolve) => setTimeout(resolve, 1400))
-    setLoading(false)
-    setSubmitted(true)
+    setSubmitError(null)
+    try {
+      const res = await fetch('/api/reservations', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      })
+      if (!res.ok) throw new Error('Request failed')
+      setSubmitted(true)
+    } catch {
+      setSubmitError(t('reservation.submitError'))
+    } finally {
+      setLoading(false)
+    }
   }
 
   const today = new Date().toISOString().split('T')[0]
@@ -235,6 +247,10 @@ export default function Reservation() {
                       className={`${inputClass} resize-none`}
                     />
                   </FieldWrapper>
+
+                  {submitError && (
+                    <p className="text-center text-[13px] text-red-400 font-body">{submitError}</p>
+                  )}
 
                   <motion.button
                     type="submit"

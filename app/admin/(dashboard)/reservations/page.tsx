@@ -1,0 +1,161 @@
+'use client'
+
+import { useEffect, useState, useCallback } from 'react'
+import { Check, X, Trash2, Loader2 } from 'lucide-react'
+import { cn } from '@/lib/utils'
+
+interface ReservationRow {
+  _id: string
+  name: string
+  email: string
+  phone: string
+  date: string
+  time: string
+  guests: number
+  specialRequests?: string
+  status: 'pending' | 'approved' | 'cancelled'
+  createdAt: string
+}
+
+const TABS = ['all', 'pending', 'approved', 'cancelled'] as const
+
+const statusStyles: Record<string, string> = {
+  pending: 'bg-gold/15 text-gold',
+  approved: 'bg-green-700/15 text-green-700',
+  cancelled: 'bg-red-700/10 text-red-700',
+}
+
+export default function AdminReservationsPage() {
+  const [tab, setTab] = useState<(typeof TABS)[number]>('all')
+  const [reservations, setReservations] = useState<ReservationRow[]>([])
+  const [loading, setLoading] = useState(true)
+  const [busyId, setBusyId] = useState<string | null>(null)
+
+  const load = useCallback(async (status: (typeof TABS)[number]) => {
+    setLoading(true)
+    const qs = status === 'all' ? '' : `?status=${status}`
+    const res = await fetch(`/api/reservations${qs}`)
+    if (res.ok) {
+      const data = await res.json()
+      setReservations(data.reservations)
+    }
+    setLoading(false)
+  }, [])
+
+  useEffect(() => {
+    load(tab)
+  }, [tab, load])
+
+  const updateStatus = async (id: string, status: 'approved' | 'cancelled') => {
+    setBusyId(id)
+    const res = await fetch(`/api/reservations/${id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ status }),
+    })
+    if (res.ok) await load(tab)
+    setBusyId(null)
+  }
+
+  const remove = async (id: string) => {
+    if (!confirm('Delete this reservation permanently?')) return
+    setBusyId(id)
+    const res = await fetch(`/api/reservations/${id}`, { method: 'DELETE' })
+    if (res.ok) await load(tab)
+    setBusyId(null)
+  }
+
+  return (
+    <div>
+      <h1 className="font-display text-3xl text-cream mb-1">Reservations</h1>
+      <p className="text-cream-muted font-body text-sm mb-6">
+        Review incoming table requests and manage their status.
+      </p>
+
+      <div className="flex gap-2 mb-6">
+        {TABS.map((t) => (
+          <button
+            key={t}
+            onClick={() => setTab(t)}
+            className={cn(
+              'px-4 py-2 text-xs font-body uppercase tracking-widest rounded-md transition-colors duration-200',
+              tab === t ? 'bg-gold text-luxury-black' : 'bg-luxury-card border border-luxury-border text-cream-muted hover:text-cream'
+            )}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
+
+      {loading ? (
+        <div className="flex items-center gap-2 text-cream-muted text-sm font-body py-10 justify-center">
+          <Loader2 size={16} className="animate-spin" /> Loading…
+        </div>
+      ) : reservations.length === 0 ? (
+        <p className="text-cream-muted font-body text-sm py-10 text-center">No reservations here.</p>
+      ) : (
+        <div className="space-y-3">
+          {reservations.map((r) => (
+            <div key={r._id} className="glass-card p-5">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="min-w-0">
+                  <div className="flex items-center gap-3 flex-wrap">
+                    <p className="font-display text-lg text-cream">{r.name}</p>
+                    <span className={cn('px-2.5 py-0.5 rounded-full text-[10px] font-body uppercase tracking-widest', statusStyles[r.status])}>
+                      {r.status}
+                    </span>
+                  </div>
+                  <p className="text-cream-muted text-sm font-body mt-1">
+                    {r.email} · {r.phone}
+                  </p>
+                  <p className="text-cream-muted text-sm font-body mt-1">
+                    {r.date} at {r.time} · {r.guests} {r.guests === 1 ? 'guest' : 'guests'}
+                  </p>
+                  {r.specialRequests && (
+                    <p className="text-cream-dark text-xs font-body mt-2 italic">
+                      &ldquo;{r.specialRequests}&rdquo;
+                    </p>
+                  )}
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0">
+                  {r.status !== 'approved' && (
+                    <button
+                      onClick={() => updateStatus(r._id, 'approved')}
+                      disabled={busyId === r._id}
+                      className="p-2 rounded-md bg-green-700/10 text-green-700 hover:bg-green-700/20 transition-colors duration-200 disabled:opacity-50"
+                      aria-label="Approve"
+                      title="Approve"
+                    >
+                      <Check size={16} />
+                    </button>
+                  )}
+                  {r.status !== 'cancelled' && (
+                    <button
+                      onClick={() => updateStatus(r._id, 'cancelled')}
+                      disabled={busyId === r._id}
+                      className="p-2 rounded-md bg-red-700/10 text-red-700 hover:bg-red-700/20 transition-colors duration-200 disabled:opacity-50"
+                      aria-label="Cancel"
+                      title="Cancel"
+                    >
+                      <X size={16} />
+                    </button>
+                  )}
+                  <button
+                    onClick={() => remove(r._id)}
+                    disabled={busyId === r._id}
+                    className="p-2 rounded-md bg-luxury-hover text-cream-dark hover:text-cream transition-colors duration-200 disabled:opacity-50"
+                    aria-label="Delete"
+                    title="Delete"
+                  >
+                    <Trash2 size={16} />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
+}
