@@ -187,7 +187,7 @@
 /* === Utilities === */
 @layer utilities {
   .bg-hero-overlay {
-    background-image: linear-gradient(to bottom, rgba(250,246,239,0.01) 0%, rgba(250,246,239,0.06) 50%, rgba(250,246,239,0.34) 100%);
+    background-image: linear-gradient(to bottom, rgba(250,246,239,0.003) 0%, rgba(250,246,239,0.018) 50%, rgba(250,246,239,0.102) 100%);
   }
 
   .hero-text-glow {

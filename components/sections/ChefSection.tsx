@@ -79,7 +79,7 @@ export default function ChefSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden">
               <Image
-                src="/images/chef/chefs-full-work-mode.jpeg"
+                src="/images/chef/chef2.jpeg"
                 alt={t('chef.chefImageAlt')}
                 fill
                 className="object-cover"
@@ -124,7 +124,7 @@ export default function ChefSection() {
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
         >
-          {['/images/chef/interior-6.jpeg', '/images/chef/interior-7.jpeg'].map((src, i) => (
+          {['/images/chef/interior-6.jpeg', '/images/chef/chefs-full-work-mode.jpeg'].map((src, i) => (
             <motion.div
               key={src}
               variants={fadeInUp}

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description:
       'Where every meal becomes a memory. Premium Mediterranean cuisine crafted with passion and served with excellence.',
     type: 'website',
-    images: [{ url: '/images/hero/Homepage.jpeg', width: 1200, height: 630 }],
+    images: [{ url: '/images/hero/new1.jpeg', width: 1200, height: 630 }],
   },
 }
 
