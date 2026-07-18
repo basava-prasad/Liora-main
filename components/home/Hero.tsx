@@ -9,11 +9,10 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 const SLIDE_INTERVAL = 6000
 
-const HERO_IMAGES = [
-  { src: '/images/hero/new1.jpeg', position: 'object-center' },
-  { src: '/images/hero/new3.jpeg', position: 'object-center' },
-  { src: '/images/hero/new4.jpeg', position: 'object-center' },
-  { src: '/images/hero/new5.jpeg', position: 'object-top' },
+const HERO_SLIDES = [
+  { type: 'video' as const, src: '/videos/bgvideo.mp4' },
+  { type: 'image' as const, src: '/images/hero/new1.jpeg', position: 'object-center' },
+  { type: 'image' as const, src: '/images/hero/new3.jpeg', position: 'object-center' },
 ]
 
 const textVariants = {
@@ -35,7 +34,7 @@ export default function Hero() {
   const [paused, setPaused] = useState(false)
 
   const goTo = useCallback((index: number) => {
-    setCurrent(((index % HERO_IMAGES.length) + HERO_IMAGES.length) % HERO_IMAGES.length)
+    setCurrent(((index % HERO_SLIDES.length) + HERO_SLIDES.length) % HERO_SLIDES.length)
   }, [])
 
   const go = useCallback((dir: 1 | -1) => goTo(current + dir), [current, goTo])
@@ -43,10 +42,12 @@ export default function Hero() {
   useEffect(() => {
     if (paused) return
     const id = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % HERO_IMAGES.length)
+      setCurrent((prev) => (prev + 1) % HERO_SLIDES.length)
     }, SLIDE_INTERVAL)
     return () => clearInterval(id)
   }, [paused, current])
+
+  const slide = HERO_SLIDES[current]
 
   return (
     <section
@@ -54,30 +55,35 @@ export default function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* Background image slider */}
+      {/* Background slider */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src={HERO_IMAGES[current].src}
-          alt={t('hero.imageAlt')}
-          fill
-          priority={current === 0}
-          quality={90}
-          className={`object-cover ${HERO_IMAGES[current].position}`}
-          sizes="100vw"
-        />
+        {slide.type === 'video' ? (
+          <video
+            key={slide.src}
+            className="w-full h-full object-cover"
+            src={slide.src}
+            autoPlay
+            loop
+            muted
+            playsInline
+            aria-label={t('hero.imageAlt')}
+          />
+        ) : (
+          <Image
+            key={slide.src}
+            src={slide.src}
+            alt={t('hero.imageAlt')}
+            fill
+            priority={current === 0}
+            quality={90}
+            className={`object-cover ${slide.position}`}
+            sizes="100vw"
+          />
+        )}
       </div>
 
       {/* Gradient overlay */}
-      <div className="absolute inset-0 z-10 bg-luxury-black/4" />
-      <div className="absolute inset-0 z-10 bg-hero-overlay" />
-
-      {/* Top decorative line */}
-      <motion.div
-        className="absolute top-0 left-0 right-0 h-px bg-gold/30 z-20 origin-left"
-        initial={{ scaleX: 0 }}
-        animate={{ scaleX: 1 }}
-        transition={{ duration: 1.4, ease: EASE, delay: 0.2 }}
-      />
+      <div className="absolute inset-0 z-10 bg-hero-scrim" />
 
       {/* Previous / Next controls */}
       <button
@@ -97,7 +103,7 @@ export default function Hero() {
 
       {/* Slide indicators */}
       <div className="absolute bottom-24 left-1/2 -translate-x-1/2 z-30 flex items-center gap-2">
-        {HERO_IMAGES.map((_, i) => (
+        {HERO_SLIDES.map((_, i) => (
           <button
             key={i}
             onClick={() => goTo(i)}
@@ -108,6 +114,14 @@ export default function Hero() {
           />
         ))}
       </div>
+
+      {/* Top decorative line */}
+      <motion.div
+        className="absolute top-0 left-0 right-0 h-px bg-gold/30 z-20 origin-left"
+        initial={{ scaleX: 0 }}
+        animate={{ scaleX: 1 }}
+        transition={{ duration: 1.4, ease: EASE, delay: 0.2 }}
+      />
 
       {/* Content */}
       <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
@@ -120,7 +134,7 @@ export default function Hero() {
           className="flex items-center justify-center gap-4 mb-6"
         >
           <span className="w-12 h-px bg-gold-muted/60" />
-          <span className="section-label text-luxury-card hero-text-glow">{t('hero.label')}</span>
+          <span className="section-label text-luxury-card">{t('hero.label')}</span>
           <span className="w-12 h-px bg-gold-muted/60" />
         </motion.div>
 
@@ -131,7 +145,7 @@ export default function Hero() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none hero-text-glow"
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none"
           >
             {t('hero.titleLine1')}
           </motion.h1>
@@ -142,7 +156,7 @@ export default function Hero() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic text-black leading-none mt-1 hero-text-glow"
+            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic leading-none mt-1 text-gold-metallic"
           >
             {t('hero.titleLine2')}
           </motion.h1>
@@ -154,7 +168,7 @@ export default function Hero() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="mt-8 text-luxury-card text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto hero-subtitle-glow"
+          className="mt-8 text-luxury-card text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto"
         >
           {t('hero.subtitle')}
         </motion.p>
@@ -185,7 +199,7 @@ export default function Hero() {
         transition={{ delay: 1.8, duration: 0.8 }}
         aria-label={t('hero.scrollAria')}
       >
-        <span className="text-cream/70 text-xs tracking-[0.25em] uppercase font-body group-hover:text-gold/60 transition-colors duration-300 hero-text-glow">
+        <span className="text-cream/70 text-xs tracking-[0.25em] uppercase font-body group-hover:text-gold/60 transition-colors duration-300">
           {t('hero.scroll')}
         </span>
         <motion.div
@@ -195,9 +209,6 @@ export default function Hero() {
           <ChevronDown size={18} className="text-gold/50 group-hover:text-gold transition-colors duration-300" />
         </motion.div>
       </motion.button>
-
-      {/* Bottom fade to next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-luxury-black to-transparent z-20 pointer-events-none" />
     </section>
   )
 }
