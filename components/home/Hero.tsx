@@ -11,8 +11,20 @@ const SLIDE_INTERVAL = 6000
 
 const HERO_SLIDES = [
   { type: 'video' as const, src: '/videos/bgvideo.mp4' },
-  { type: 'image' as const, src: '/images/hero/new1.jpeg', position: 'object-center' },
-  { type: 'image' as const, src: '/images/hero/new3.jpeg', position: 'object-center' },
+  {
+    type: 'image' as const,
+    src: '/images/hero/new1.jpeg',
+    mobilePosition: 'object-center',
+    position: 'md:object-center',
+  },
+  {
+    // Foreground chairs sit left-of-center in this 16:9 shot; on the tall
+    // mobile crop a centered position loses them, so bias the crop left.
+    type: 'image' as const,
+    src: '/images/hero/new3.jpeg',
+    mobilePosition: 'object-[25%_center]',
+    position: 'md:object-center',
+  },
 ]
 
 const textVariants = {
@@ -51,7 +63,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full mt-20 h-[calc(100vh-5rem)] min-h-[600px] flex items-center justify-center overflow-hidden"
+      className="relative w-full mt-20 h-[calc(100svh-5rem)] min-h-[560px] sm:min-h-[600px] flex items-start sm:items-center justify-center pt-24 sm:pt-0 overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -76,7 +88,7 @@ export default function Hero() {
             fill
             priority={current === 0}
             quality={90}
-            className={`object-cover ${slide.position}`}
+            className={`object-cover ${slide.mobilePosition} ${slide.position}`}
             sizes="100vw"
           />
         )}
@@ -131,7 +143,7 @@ export default function Hero() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex items-center justify-center gap-4 mb-6"
+          className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6"
         >
           <span className="w-12 h-px bg-gold-muted/60" />
           <span className="section-label text-luxury-card">{t('hero.label')}</span>
@@ -145,7 +157,7 @@ export default function Hero() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none"
+            className="font-display text-[clamp(2rem,9vw,3rem)] sm:text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none"
           >
             {t('hero.titleLine1')}
           </motion.h1>
@@ -156,7 +168,7 @@ export default function Hero() {
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl italic leading-none mt-1 text-gold-metallic"
+            className="font-display text-[clamp(2rem,9vw,3rem)] sm:text-6xl md:text-7xl lg:text-8xl italic leading-none mt-1 text-gold-metallic"
           >
             {t('hero.titleLine2')}
           </motion.h1>
@@ -168,7 +180,7 @@ export default function Hero() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="mt-8 text-luxury-card text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto"
+          className="mt-4 sm:mt-8 text-luxury-card text-[clamp(0.875rem,3.2vw,1rem)] sm:text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto"
         >
           {t('hero.subtitle')}
         </motion.p>
@@ -179,7 +191,7 @@ export default function Hero() {
           variants={textVariants}
           initial="hidden"
           animate="visible"
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-10"
         >
           <a href="#menu" className="btn-primary">
             {t('hero.exploreMenu')}
