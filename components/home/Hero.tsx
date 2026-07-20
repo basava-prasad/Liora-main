@@ -1,29 +1,50 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
-import Image from 'next/image'
+import { getImageProps } from 'next/image'
 import { motion } from 'framer-motion'
 import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
 const SLIDE_INTERVAL = 6000
+const MOBILE_MEDIA_QUERY = '(max-width: 767px)'
+const DESKTOP_MEDIA_QUERY = '(min-width: 768px)'
 
-const HERO_SLIDES = [
-  { type: 'video' as const, src: '/videos/bgvideo.mp4' },
+type VideoSlide = { type: 'video'; src: string }
+type ImageSlide = {
+  type: 'image'
+  src: string
+  width: number
+  height: number
+  // Dedicated 9:16 crop for phones — the source photos are 16:9, and on a
+  // tall mobile viewport a plain object-position crop only shows a ~30%-wide
+  // sliver of them, which isn't enough to frame the subject reliably.
+  mobileSrc: string
+  mobileWidth: number
+  mobileHeight: number
+}
+type HeroSlide = VideoSlide | ImageSlide
+
+const HERO_SLIDES: HeroSlide[] = [
+  { type: 'video', src: '/videos/bgvideo.mp4' },
   {
-    type: 'image' as const,
+    type: 'image',
     src: '/images/hero/new1.jpeg',
-    mobilePosition: 'object-center',
-    position: 'md:object-center',
+    width: 1280,
+    height: 720,
+    mobileSrc: '/images/hero/new1-mobile.jpg',
+    mobileWidth: 480,
+    mobileHeight: 854,
   },
   {
-    // Foreground chairs sit left-of-center in this 16:9 shot; on the tall
-    // mobile crop a centered position loses them, so bias the crop left.
-    type: 'image' as const,
+    type: 'image',
     src: '/images/hero/new3.jpeg',
-    mobilePosition: 'object-[25%_center]',
-    position: 'md:object-center',
+    width: 1280,
+    height: 720,
+    mobileSrc: '/images/hero/new3-mobile.jpg',
+    mobileWidth: 480,
+    mobileHeight: 854,
   },
 ]
 
@@ -38,6 +59,38 @@ const textVariants = {
 
 const scrollToNext = () => {
   document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
+}
+
+// True art direction (different crops per breakpoint via <picture>), not a
+// scaled-down image — the browser only downloads whichever <source> matches.
+function HeroSlideImage({ slide, alt, priority }: { slide: ImageSlide; alt: string; priority: boolean }) {
+  const common = { alt, sizes: '100vw' }
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({ ...common, width: slide.width, height: slide.height, quality: 90, src: slide.src })
+  const {
+    props: { srcSet: mobileSrcSet, ...imgProps },
+  } = getImageProps({
+    ...common,
+    width: slide.mobileWidth,
+    height: slide.mobileHeight,
+    quality: 82,
+    src: slide.mobileSrc,
+  })
+
+  return (
+    <picture>
+      <source media={MOBILE_MEDIA_QUERY} srcSet={mobileSrcSet} />
+      <source media={DESKTOP_MEDIA_QUERY} srcSet={desktopSrcSet} />
+      <img
+        {...imgProps}
+        alt={alt}
+        fetchPriority={priority ? 'high' : undefined}
+        loading={priority ? 'eager' : 'lazy'}
+        className="w-full h-full object-cover object-center"
+      />
+    </picture>
+  )
 }
 
 export default function Hero() {
@@ -63,7 +116,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full mt-20 h-[calc(100svh-5rem)] min-h-[560px] sm:min-h-[600px] flex items-start sm:items-center justify-center pt-24 sm:pt-0 overflow-hidden"
+      className="relative w-full mt-20 h-[calc(100svh-5rem)] min-h-[560px] md:min-h-[600px] flex items-start md:items-center justify-center pt-16 md:pt-0 overflow-hidden"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
@@ -72,7 +125,7 @@ export default function Hero() {
         {slide.type === 'video' ? (
           <video
             key={slide.src}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover object-center"
             src={slide.src}
             autoPlay
             loop
@@ -81,33 +134,24 @@ export default function Hero() {
             aria-label={t('hero.imageAlt')}
           />
         ) : (
-          <Image
-            key={slide.src}
-            src={slide.src}
-            alt={t('hero.imageAlt')}
-            fill
-            priority={current === 0}
-            quality={90}
-            className={`object-cover ${slide.mobilePosition} ${slide.position}`}
-            sizes="100vw"
-          />
+          <HeroSlideImage key={slide.src} slide={slide} alt={t('hero.imageAlt')} priority={current === 0} />
         )}
       </div>
 
       {/* Gradient overlay */}
       <div className="absolute inset-0 z-10 bg-hero-scrim" />
 
-      {/* Previous / Next controls */}
+      {/* Previous / Next controls — bottom corners on mobile, side-centered on desktop */}
       <button
         onClick={() => go(-1)}
-        className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-luxury-card/50 backdrop-blur-md border border-cream-dark/25 shadow-[0_2px_16px_rgba(0,0,0,0.15)] flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-all duration-300"
+        className="absolute left-4 bottom-6 md:left-8 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-30 w-11 h-11 rounded-full bg-luxury-card/50 backdrop-blur-md border border-cream-dark/25 shadow-[0_2px_16px_rgba(0,0,0,0.15)] flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-all duration-300"
         aria-label={t('hero.previousAria')}
       >
         <ChevronLeft size={20} />
       </button>
       <button
         onClick={() => go(1)}
-        className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-30 w-11 h-11 rounded-full bg-luxury-card/50 backdrop-blur-md border border-cream-dark/25 shadow-[0_2px_16px_rgba(0,0,0,0.15)] flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-all duration-300"
+        className="absolute right-4 bottom-6 md:right-8 md:bottom-auto md:top-1/2 md:-translate-y-1/2 z-30 w-11 h-11 rounded-full bg-luxury-card/50 backdrop-blur-md border border-cream-dark/25 shadow-[0_2px_16px_rgba(0,0,0,0.15)] flex items-center justify-center text-cream hover:text-gold hover:border-gold/50 transition-all duration-300"
         aria-label={t('hero.nextAria')}
       >
         <ChevronRight size={20} />
@@ -136,70 +180,143 @@ export default function Hero() {
       />
 
       {/* Content */}
-      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto">
-        {/* Label */}
-        <motion.div
-          custom={0}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6"
-        >
-          <span className="w-12 h-px bg-gold-muted/60" />
-          <span className="section-label text-luxury-card">{t('hero.label')}</span>
-          <span className="w-12 h-px bg-gold-muted/60" />
-        </motion.div>
-
-        {/* Main Headline */}
-        <div className="overflow-hidden">
-          <motion.h1
-            custom={1}
+      <div className="relative z-20 text-center px-6 max-w-5xl mx-auto w-full">
+        {/* ============ Mobile composition (below 768px) ============ */}
+        {/* Independent layout, not a scaled-down desktop version. */}
+        <div className="md:hidden flex flex-col items-center">
+          <motion.div
+            custom={0}
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-[clamp(2rem,9vw,3rem)] sm:text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none"
+            className="flex items-center justify-center gap-3 mb-3"
           >
-            {t('hero.titleLine1')}
-          </motion.h1>
-        </div>
-        <div className="overflow-hidden pr-2 sm:pr-3 md:pr-4">
-          <motion.h1
-            custom={2}
+            <span className="w-8 h-px bg-gold-muted/60" />
+            <span className="section-label text-luxury-card">{t('hero.label')}</span>
+            <span className="w-8 h-px bg-gold-muted/60" />
+          </motion.div>
+
+          <div className="overflow-hidden">
+            <motion.h1
+              custom={1}
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-display text-[clamp(3rem,13vw,3.75rem)] text-luxury-card leading-none"
+            >
+              {t('hero.titleLine1')}
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden">
+            <motion.h1
+              custom={2}
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-display text-[clamp(3rem,13vw,3.75rem)] italic leading-none mt-0.5 text-gold-metallic"
+            >
+              {t('hero.titleLine2')}
+            </motion.h1>
+          </div>
+
+          <motion.p
+            custom={3}
             variants={textVariants}
             initial="hidden"
             animate="visible"
-            className="font-display text-[clamp(2rem,9vw,3rem)] sm:text-6xl md:text-7xl lg:text-8xl italic leading-none mt-1 text-gold-metallic"
+            className="mt-4 w-[90%] mx-auto text-luxury-card text-base font-body font-normal leading-relaxed"
           >
-            {t('hero.titleLine2')}
-          </motion.h1>
+            {t('hero.subtitle')}
+          </motion.p>
+
+          <motion.div
+            custom={4}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-col items-center gap-3 w-full mt-6"
+          >
+            <a href="#menu" className="btn-primary w-[88%] max-w-xs">
+              {t('hero.exploreMenu')}
+            </a>
+            <a
+              href="#reservations"
+              className="btn-outline w-[88%] max-w-xs !border-luxury-card !text-luxury-card hover:!bg-luxury-card hover:!text-gold"
+            >
+              {t('hero.bookTable')}
+            </a>
+          </motion.div>
         </div>
 
-        {/* Subtitle */}
-        <motion.p
-          custom={3}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="mt-4 sm:mt-8 text-luxury-card text-[clamp(0.875rem,3.2vw,1rem)] sm:text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto"
-        >
-          {t('hero.subtitle')}
-        </motion.p>
+        {/* ============ Desktop composition (768px and up, unchanged) ============ */}
+        <div className="hidden md:block">
+          {/* Label */}
+          <motion.div
+            custom={0}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex items-center justify-center gap-4 mb-6"
+          >
+            <span className="w-12 h-px bg-gold-muted/60" />
+            <span className="section-label text-luxury-card">{t('hero.label')}</span>
+            <span className="w-12 h-px bg-gold-muted/60" />
+          </motion.div>
 
-        {/* CTAs */}
-        <motion.div
-          custom={4}
-          variants={textVariants}
-          initial="hidden"
-          animate="visible"
-          className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 mt-6 sm:mt-10"
-        >
-          <a href="#menu" className="btn-primary">
-            {t('hero.exploreMenu')}
-          </a>
-          <a href="#reservations" className="btn-outline !border-luxury-card !text-luxury-card hover:!bg-luxury-card hover:!text-gold">
-            {t('hero.bookTable')}
-          </a>
-        </motion.div>
+          {/* Main Headline */}
+          <div className="overflow-hidden">
+            <motion.h1
+              custom={1}
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-display text-6xl md:text-7xl lg:text-8xl text-luxury-card leading-none"
+            >
+              {t('hero.titleLine1')}
+            </motion.h1>
+          </div>
+          <div className="overflow-hidden pr-3 md:pr-4">
+            <motion.h1
+              custom={2}
+              variants={textVariants}
+              initial="hidden"
+              animate="visible"
+              className="font-display text-6xl md:text-7xl lg:text-8xl italic leading-none mt-1 text-gold-metallic"
+            >
+              {t('hero.titleLine2')}
+            </motion.h1>
+          </div>
+
+          {/* Subtitle */}
+          <motion.p
+            custom={3}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="mt-8 text-luxury-card text-base md:text-lg font-body font-normal leading-relaxed max-w-xl mx-auto"
+          >
+            {t('hero.subtitle')}
+          </motion.p>
+
+          {/* CTAs */}
+          <motion.div
+            custom={4}
+            variants={textVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex flex-row items-center justify-center gap-4 mt-10"
+          >
+            <a href="#menu" className="btn-primary">
+              {t('hero.exploreMenu')}
+            </a>
+            <a
+              href="#reservations"
+              className="btn-outline !border-luxury-card !text-luxury-card hover:!bg-luxury-card hover:!text-gold"
+            >
+              {t('hero.bookTable')}
+            </a>
+          </motion.div>
+        </div>
       </div>
 
       {/* Scroll Indicator */}
