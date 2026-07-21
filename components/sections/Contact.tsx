@@ -81,7 +81,7 @@ export default function Contact() {
               </a>
             </div>
             {/* Decorative grid lines */}
-            <div className="absolute inset-0 opacity-5"
+            <div className="absolute inset-0 opacity-5 pointer-events-none"
               style={{
                 backgroundImage: 'linear-gradient(#6B4226 1px, transparent 1px), linear-gradient(90deg, #6B4226 1px, transparent 1px)',
                 backgroundSize: '40px 40px',
