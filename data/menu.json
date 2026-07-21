@@ -11,18 +11,18 @@
           "price": { "en": "€5.90", "fi": "€5.90" },
           "image": "/images/dishes/hummus.jpeg",
           "description": {
-            "en": "Creamy chickpea hummus drizzled with olive oil and paprika, served with warm pita.",
-            "fi": "Samettista kikhernehummusta, päällä oliiviöljyä ja paprikaa, tarjolla lämpimän pitaleivän kanssa."
+            "en": "Creamy chickpea dip finished with extra virgin olive oil. Served with warm bread.",
+            "fi": "Samettinen kikhernetahna laadukkaalla ekstraneitsytoliiviöljyllä viimeisteltynä. Tarjoillaan lämpimän leivän kanssa."
           }
         },
         {
           "id": "cacik",
-          "name": { "en": "Cacik", "fi": "Cacik" },
+          "name": { "en": "Cacık", "fi": "Cacık" },
           "price": { "en": "€5.90", "fi": "€5.90" },
           "image": "/images/dishes/cacik.jpeg",
           "description": {
-            "en": "Refreshing Turkish yoghurt dip with cucumber, garlic, dill, and a drizzle of olive oil.",
-            "fi": "Raikas turkkilainen jogurttikastike kurkulla, valkosipulilla, tillillä ja oliiviöljyllä."
+            "en": "Refreshing yogurt and cucumber dip with garlic and mint. Served with warm bread.",
+            "fi": "Raikas jogurtti-kurkkudippi valkosipulilla ja mintulla. Tarjoillaan lämpimän leivän kanssa."
           }
         },
         {
@@ -31,8 +31,8 @@
           "price": { "en": "€6.90", "fi": "€6.90" },
           "image": "/images/dishes/baba-ghanoush.jpeg",
           "description": {
-            "en": "Smoky roasted aubergine blended with tahini, lemon juice, and garlic.",
-            "fi": "Savuista paahdettua munakoisoa, sekoitettuna tahiniin, sitruunamehuun ja valkosipuliin."
+            "en": "Smoked eggplant dip with tahini, garlic and extra virgin olive oil. Served with warm bread.",
+            "fi": "Savustettua munakoisoa, tahinia, valkosipulia ja ekstraneitsytoliiviöljyä. Tarjoillaan lämpimän leivän kanssa."
           }
         },
         {
@@ -41,8 +41,8 @@
           "price": { "en": "€6.90", "fi": "€6.90" },
           "image": "/images/dishes/dolma.jpeg",
           "description": {
-            "en": "Hand-rolled vine leaves stuffed with fragrant herbed rice, slow-cooked to perfection.",
-            "fi": "Käsin käärittyjä viininlehtiä täytettynä tuoksuvalla yrttiriisillä, hitaasti kypsennettynä täydellisiksi."
+            "en": "Stuffed vine leaves with Mediterranean flavours.",
+            "fi": "Täytettyjä viininlehtiä välimerellisillä mauilla."
           }
         },
         {
@@ -51,8 +51,8 @@
           "price": { "en": "€6.90", "fi": "€6.90" },
           "image": "/images/dishes/garlic-bread.jpeg",
           "description": {
-            "en": "Freshly baked bread infused with roasted garlic butter and herbs.",
-            "fi": "Tuoreena paistettua leipää, jossa paahdettua valkosipulivoita ja yrttejä."
+            "en": "Garlic bread.",
+            "fi": "Valkosipulileipä."
           }
         },
         {
@@ -61,8 +61,8 @@
           "price": { "en": "€7.90", "fi": "€7.90" },
           "image": "/images/dishes/garlic-bread-with-cheese.jpeg",
           "description": {
-            "en": "Golden garlic bread topped with melted cheese, fresh from the oven.",
-            "fi": "Kullanruskeaa valkosipulileipää sulatetulla juustolla, suoraan uunista."
+            "en": "Garlic bread with cheese.",
+            "fi": "Valkosipulileipä juustolla."
           }
         },
         {
@@ -71,8 +71,8 @@
           "price": { "en": "€19.90", "fi": "€19.90" },
           "image": "/images/dishes/meze-platter.jpeg",
           "description": {
-            "en": "A generous selection of our finest mezze — hummus, baba ghanoush, dolma, cacik, and fresh bread.",
-            "fi": "Runsas valikoima parhaita mezejämme — hummusta, baba ghanoushia, dolmaa, cacikia ja tuoretta leipää."
+            "en": "Selection of hummus, cacık, baba ghanoush, dolma and warm bread.",
+            "fi": "Hummus, Cacık, Baba Ghanoush, Dolma sekä lämmintä leipää."
           },
           "featured": true,
           "stars": 2
@@ -87,11 +87,11 @@
         {
           "id": "greek-salad",
           "name": { "en": "Greek Salad", "fi": "Kreikkalainen salaatti" },
-          "price": { "en": "€13.90", "fi": "€13.90" },
+          "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/greek-salad.jpeg",
           "description": {
-            "en": "Ripe tomatoes, cucumber, Kalamata olives, red onion, and a generous slab of feta in olive oil.",
-            "fi": "Kypsiä tomaatteja, kurkkua, kalamataoliiveja, punasipulia ja runsaasti fetaa oliiviöljyssä."
+            "en": "Feta cheese, Kalamata olives, tomato, cucumber, red onion, oregano, salt and extra virgin olive oil.",
+            "fi": "Fetajuusto, Kalamata-oliivit, tomaatti, kurkku, punasipuli, oregano, suola ja ekstra-neitsytoliiviöljy."
           }
         },
         {
@@ -100,18 +100,18 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/halloumi-salad.jpeg",
           "description": {
-            "en": "Grilled halloumi with mixed greens, roasted peppers, pomegranate seeds, and balsamic glaze.",
-            "fi": "Grillattua halloumia sekasalaatilla, paahdetuilla paprikoilla, granaattiomenansiemenillä ja balsamicokastikkeella."
+            "en": "Grilled halloumi, fresh salad, cherry tomatoes, cucumber, red onion and balsamic dressing.",
+            "fi": "Grillattua halloumia, salaattia, kirsikkatomaatteja, kurkkua, punasipulia ja balsamicokastiketta."
           }
         },
         {
-          "id": "grilled-chicken-salad",
-          "name": { "en": "Grilled Chicken Salad", "fi": "Grillattu kanasalaatti" },
+          "id": "chicken-shish-salad",
+          "name": { "en": "Chicken Shish Salad", "fi": "Chicken Shish -salaatti" },
           "price": { "en": "€15.90", "fi": "€15.90" },
           "image": "/images/dishes/grilled-chicken-salad.jpeg",
           "description": {
-            "en": "Char-grilled chicken breast on fresh greens with avocado, tomato, and lemon dressing.",
-            "fi": "Hiiligrillattua kananrintaa tuoreilla salaateilla, avokadolla, tomaatilla ja sitruunakastikkeella."
+            "en": "Charcoal-grilled chicken, feta cheese, fresh salad, cherry tomatoes, cucumber, red onion and house dressing.",
+            "fi": "Hiiligrillattua kananfileetä, fetajuustoa, salaattia, kirsikkatomaatteja, kurkkua, punasipulia ja talon kastiketta."
           }
         }
       ]
@@ -124,7 +124,7 @@
         {
           "id": "chicken-shish",
           "name": { "en": "Chicken Shish", "fi": "Kana Shish" },
-          "price": { "en": "1 Skewer €13.90 · 2 Skewers €16.90", "fi": "1 varras €13.90 · 2 varrasta €16.90" },
+          "price": { "en": "1 Skewer €14.90 · 2 Skewers €18.90", "fi": "1 varras €14.90 · 2 varrasta €18.90" },
           "image": "/images/dishes/chicken-shish-kebab.jpeg",
           "description": {
             "en": "Marinated chicken breast skewered and flame-grilled over charcoal to smoky perfection.",
@@ -133,8 +133,8 @@
         },
         {
           "id": "beef-tenderloin-shish",
-          "name": { "en": "Beef Tenderloin Shish", "fi": "Naudan sisäfilee Shish" },
-          "price": { "en": "1 Skewer €17.90 · 2 Skewers €22.90", "fi": "1 varras €17.90 · 2 varrasta €22.90" },
+          "name": { "en": "Beef Tenderloin Shish", "fi": "Naudan sisäfilevarras" },
+          "price": { "en": "1 Skewer €19.90 · 2 Skewers €25.90", "fi": "1 varras €19.90 · 2 varrasta €25.90" },
           "image": "/images/dishes/grilled-beef-skewer.jpeg",
           "description": {
             "en": "Premium beef tenderloin, hand-cut and skewered, charcoal-grilled to your desired temperature.",
@@ -144,19 +144,9 @@
           "stars": 2
         },
         {
-          "id": "shish-kebab",
-          "name": { "en": "Shish Kebab", "fi": "Shish Kebab" },
-          "price": { "en": "1 Skewer €14.90 · 2 Skewers €17.90", "fi": "1 varras €14.90 · 2 varrasta €17.90" },
-          "image": "/images/dishes/turkish-beef-kebab.jpeg",
-          "description": {
-            "en": "Seasoned minced lamb and beef shaped on skewers, charcoal-grilled with aromatic spices.",
-            "fi": "Maustettua jauhettua lammasta ja naudanlihaa vartaassa, hiiligrillattuna tuoksuvilla mausteilla."
-          }
-        },
-        {
           "id": "adana-kebab",
           "name": { "en": "Adana Kebab", "fi": "Adana Kebab" },
-          "price": { "en": "1 Skewer €14.90 · 2 Skewers €17.90", "fi": "1 varras €14.90 · 2 varrasta €17.90" },
+          "price": { "en": "1 Skewer €14.90 · 2 Skewers €18.90", "fi": "1 varras €14.90 · 2 varrasta €18.90" },
           "image": "/images/dishes/adana-kebab.jpeg",
           "description": {
             "en": "Spiced minced lamb on flat skewers, grilled over charcoal — a Turkish street-food classic elevated.",
@@ -166,7 +156,7 @@
         {
           "id": "lamb-chops",
           "name": { "en": "Lamb Chops", "fi": "Lampaankyljykset" },
-          "price": { "en": "€23.90", "fi": "€23.90" },
+          "price": { "en": "€25.90", "fi": "€25.90" },
           "image": "/images/dishes/grilled-lamb-chops.jpeg",
           "description": {
             "en": "Tender lamb chops marinated in herbs and spices, seared over high-heat charcoal flames.",
@@ -178,24 +168,12 @@
         {
           "id": "lamb-ribs",
           "name": { "en": "Lamb Ribs", "fi": "Lampaan kylkiluut" },
-          "price": { "en": "€19.90", "fi": "€19.90" },
+          "price": { "en": "€21.90", "fi": "€21.90" },
           "image": "/images/dishes/lamb-ribs.jpeg",
           "description": {
             "en": "Fall-off-the-bone lamb ribs slow-cooked then finished over charcoal for a caramelised crust.",
             "fi": "Luista irtoavat lampaan kylkiluut, haudutettu hitaasti ja viimeistelty hiilillä rapeaksi ja karamellisoituneeksi."
           }
-        },
-        {
-          "id": "grilled-salmon",
-          "name": { "en": "Grilled Salmon", "fi": "Grillattu lohi" },
-          "price": { "en": "€21.90", "fi": "€21.90" },
-          "image": "/images/dishes/mediterranian-grilled-salmon.jpeg",
-          "description": {
-            "en": "Fresh Atlantic salmon fillet char-grilled and served with Mediterranean herbs and lemon.",
-            "fi": "Tuoretta Atlantin lohifileetä hiiligrillattuna, tarjolla Välimeren yrttien ja sitruunan kanssa."
-          },
-          "featured": true,
-          "stars": 2
         },
         {
           "id": "charcoal-wings",
@@ -209,32 +187,22 @@
         },
         {
           "id": "halloumi-grill",
-          "name": { "en": "Halloumi Grill", "fi": "Halloumigrilli" },
+          "name": { "en": "Grilled Halloumi", "fi": "Grillattu halloumi" },
           "price": { "en": "€16.90", "fi": "€16.90" },
           "image": "/images/dishes/halloumi-grilled.jpeg",
           "description": {
-            "en": "Thick-cut halloumi slices grilled until golden and served with a drizzle of honey and herbs.",
-            "fi": "Paksuja halloumiviipaleita grillattuna kullanruskeiksi, tarjolla hunajan ja yrttien kera."
-          }
-        },
-        {
-          "id": "veggie-grill",
-          "name": { "en": "Veggie Grill", "fi": "Kasvisgrilli" },
-          "price": { "en": "€15.90", "fi": "€15.90" },
-          "image": "/images/dishes/veggie-grill.jpeg",
-          "description": {
-            "en": "Seasonal vegetables marinated in olive oil, herbs, and lemon, char-grilled to smoky tenderness.",
-            "fi": "Kauden vihanneksia marinoituna oliiviöljyssä, yrteissä ja sitruunassa, hiiligrillattuna mureiksi ja savuisiksi."
+            "en": "Thick-cut halloumi, char-grilled until golden.",
+            "fi": "Paksuja halloumiviipaleita, hiiligrillattuna kullanruskeiksi."
           }
         },
         {
           "id": "liora-mixed-grill-2",
           "name": { "en": "Liora Mixed Grill", "fi": "Liora Sekagrilli" },
-          "price": { "en": "€52.90", "fi": "€52.90" },
+          "price": { "en": "€57.90", "fi": "€57.90" },
           "image": "/images/dishes/turkish-mixed-grill-platter.jpeg",
           "description": {
-            "en": "Our signature sharing platter — Chicken Shish, Shish Kebab, Lamb Ribs and your choice of side.",
-            "fi": "Talon suosikkilautanen jaettavaksi — Kana Shish, Shish Kebab, lampaan kylkiluut ja valitsemasi lisuke."
+            "en": "Chicken Shish (2 skewers), Adana Kebab (2 skewers), 4 lamb ribs and your choice of side.",
+            "fi": "Chicken Shish (2 varrasta), Adana Kebab (2 varrasta), 4 lampaan ribsiä sekä valitsemasi lisuke."
           },
           "featured": true,
           "stars": 3,
@@ -243,11 +211,11 @@
         {
           "id": "liora-mixed-grill-4",
           "name": { "en": "Liora Mixed Grill", "fi": "Liora Sekagrilli" },
-          "price": { "en": "€104.90", "fi": "€104.90" },
+          "price": { "en": "€114.90", "fi": "€114.90" },
           "image": "/images/dishes/grilled-kebab-platter.jpeg",
           "description": {
-            "en": "A grand feast for four — the full Liora charcoal grill experience with all our signature meats.",
-            "fi": "Suurenmoinen ateria neljälle — koko Lioran hiiligrillikokemus kaikkine suosikkilihoinemme."
+            "en": "Chicken Shish (4 skewers), Adana Kebab (4 skewers), 8 lamb ribs and your choice of side.",
+            "fi": "Chicken Shish (4 varrasta), Adana Kebab (4 varrasta), 8 lampaan ribsiä sekä valitsemasi lisuke."
           },
           "featured": true,
           "stars": 3,
@@ -257,27 +225,27 @@
     },
     {
       "id": "rotisserie",
-      "name": { "en": "Rotisserie Chicken", "fi": "Grillikana" },
+      "name": { "en": "Rotisserie Chicken", "fi": "Grillibroileri" },
       "icon": "🍗",
       "items": [
         {
           "id": "half-chicken",
-          "name": { "en": "Half Chicken", "fi": "Puolikas kana" },
+          "name": { "en": "Half Rotisserie Chicken", "fi": "Puolikas grillibroileri" },
           "price": { "en": "€15.90", "fi": "€15.90" },
           "image": "/images/dishes/mediterranian-chicken-grill.jpeg",
           "description": {
-            "en": "Slow-roasted half chicken seasoned with Mediterranean herbs, charcoal-finished for crispy skin.",
-            "fi": "Hitaasti paistettu puolikas kana maustettuna Välimeren yrteillä, viimeistelty hiilillä rapean nahan saamiseksi."
+            "en": "Served with house salad, your choice of side and fresh bread.",
+            "fi": "Tarjoillaan talonsalaatin, valitsemasi lisukkeen sekä tuoreen leivän kanssa."
           }
         },
         {
           "id": "whole-chicken",
-          "name": { "en": "Whole Chicken", "fi": "Kokonainen kana" },
+          "name": { "en": "Whole Rotisserie Chicken", "fi": "Kokonainen grillibroileri" },
           "price": { "en": "€20.90", "fi": "€20.90" },
           "image": "/images/dishes/turkish-chicken-skewer.jpeg",
           "description": {
-            "en": "A whole rotisserie chicken, golden and fragrant, perfect for sharing.",
-            "fi": "Kokonainen vartaassa paistettu kana, kullanruskea ja tuoksuva, täydellinen jaettavaksi."
+            "en": "Served with house salad, your choice of side and fresh bread.",
+            "fi": "Tarjoillaan talonsalaatin, valitsemasi lisukkeen sekä tuoreen leivän kanssa."
           }
         }
       ]
@@ -289,12 +257,12 @@
       "items": [
         {
           "id": "doner-plate",
-          "name": { "en": "Döner Plate", "fi": "Dönerlautanen" },
+          "name": { "en": "Döner Plate", "fi": "Dönerannos" },
           "price": { "en": "€13.90", "fi": "€13.90" },
           "image": "/images/dishes/doner-plate.jpeg",
           "description": {
-            "en": "Sliced döner meat on a plate with fresh salad, rice, and house sauces.",
-            "fi": "Viipaloitua döner-lihaa lautasella tuoreen salaatin, riisin ja talon kastikkeiden kanssa."
+            "en": "Beef or chicken döner with your choice of side: rice, house fries, sliced potatoes or salad.",
+            "fi": "Naudan- tai kanandöneriä sekä valitsemasi lisuke: riisi, talon ranskalaiset, viipaleperunat tai salaatti."
           }
         },
         {
@@ -302,8 +270,8 @@
           "name": { "en": "Iskender Döner", "fi": "Iskender Döner" },
           "price": { "en": "€14.90", "fi": "€14.90" },
           "description": {
-            "en": "The Ottoman classic — döner over toasted bread, drenched in tomato sauce and melted butter.",
-            "fi": "Osmanien klassikko — dönerlihaa paahdetun leivän päällä, upotettuna tomaattikastikkeeseen ja sulaan voihin."
+            "en": "Döner meat served over toasted bread and yogurt.",
+            "fi": "Dönerlihaa, paahdettua leipää ja jogurttia."
           }
         },
         {
@@ -312,17 +280,17 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/doner-roll.jpeg",
           "description": {
-            "en": "Freshly sliced döner wrapped in a soft flatbread with salad, pickles, and garlic sauce.",
-            "fi": "Tuoreena viipaloitua döneria käärittynä pehmeään litteään leipään salaatin, suolakurkun ja valkosipulikastikkeen kera."
+            "en": "Beef or chicken döner roll.",
+            "fi": "Naudan- tai kanandöneriä rullattuna."
           }
         },
         {
           "id": "stuffed-doner-bread",
           "name": { "en": "Stuffed Döner Bread", "fi": "Täytetty dönerleipä" },
-          "price": { "en": "€13.90", "fi": "€13.90" },
+          "price": { "en": "€15.90", "fi": "€15.90" },
           "description": {
-            "en": "Döner meat stuffed inside freshly baked bread with vegetables and house sauce.",
-            "fi": "Döner-lihaa täytettynä tuoreeseen leipään vihannesten ja talon kastikkeen kera."
+            "en": "Beef or chicken döner stuffed with mozzarella.",
+            "fi": "Naudan- tai kanandöneriä sekä mozzarellaa leivän sisällä."
           }
         },
         {
@@ -330,8 +298,8 @@
           "name": { "en": "Döner Sandwich", "fi": "Dönervoileipä" },
           "price": { "en": "€16.90", "fi": "€16.90" },
           "description": {
-            "en": "Generous döner filling in a premium brioche-style bun with all the trimmings.",
-            "fi": "Runsas dönertäyte laadukkaassa brioche-sämpylässä kaikkine lisukkeineen."
+            "en": "Beef or chicken döner, mozzarella and halloumi.",
+            "fi": "Naudan- tai kanandöneriä, mozzarellaa sekä halloumia."
           }
         },
         {
@@ -339,8 +307,8 @@
           "name": { "en": "Liora Special Döner", "fi": "Lioran erikois-döner" },
           "price": { "en": "€16.90", "fi": "€16.90" },
           "description": {
-            "en": "Our signature döner — a chef's secret spice blend makes this our most-loved dish.",
-            "fi": "Talon oma erikoisdöner — kokin salainen mausteseos tekee tästä suosituimman annoksemme."
+            "en": "Beef and chicken döner, rice and house fries.",
+            "fi": "Naudan- ja kanandöneriä, riisiä sekä talon ranskalaiset."
           },
           "featured": true,
           "stars": 2
@@ -353,46 +321,23 @@
       "icon": "🍕",
       "items": [
         {
-          "id": "marinara",
-          "name": { "en": "Marinara", "fi": "Marinara" },
-          "price": { "en": "€12.90", "fi": "€12.90" },
-          "image": "/images/dishes/marinara.jpeg",
-          "description": {
-            "en": "San Marzano tomato, extra virgin olive oil, garlic, and fresh basil on hand-stretched dough.",
-            "fi": "San Marzano -tomaattia, ekstra-neitsytoliiviöljyä, valkosipulia ja tuoretta basilikaa käsin venytetyllä pohjalla."
-          }
-        },
-        {
           "id": "margherita",
           "name": { "en": "Margherita", "fi": "Margherita" },
           "price": { "en": "€12.90", "fi": "€12.90" },
           "image": "/images/dishes/margherita.jpeg",
           "description": {
-            "en": "Classic tomato base with fior di latte mozzarella and garden-fresh basil leaves.",
-            "fi": "Klassinen tomaattipohja fior di latte -mozzarellalla ja puutarhatuoreilla basilikanlehdillä."
+            "en": "Mozzarella Fior di Latte, basil and extra virgin olive oil.",
+            "fi": "Mozzarella Fior di Latte, basilika ja ekstra-neitsytoliiviöljy."
           }
         },
         {
-          "id": "dolce-vita",
-          "name": { "en": "Dolce Vita", "fi": "Dolce Vita" },
+          "id": "tropicale",
+          "name": { "en": "Tropicale", "fi": "Tropicale" },
           "price": { "en": "€13.90", "fi": "€13.90" },
-          "image": "/images/dishes/dolce-vita.jpeg",
           "description": {
-            "en": "Tomato, mozzarella, grilled chicken, roasted peppers, and sun-dried tomatoes.",
-            "fi": "Tomaattia, mozzarellaa, grillattua kanaa, paahdettuja paprikoita ja aurinkokuivattuja tomaatteja."
+            "en": "Mozzarella, pizza ham strips, pineapple and Aura blue cheese.",
+            "fi": "Mozzarella, pizzasuikale, ananas ja Aura-juusto."
           }
-        },
-        {
-          "id": "hot-honey-pepperoni",
-          "name": { "en": "Hot Honey Pepperoni", "fi": "Hot Honey Pepperoni" },
-          "price": { "en": "€14.90", "fi": "€14.90" },
-          "image": "/images/dishes/hot-honey-pepperoni-pizza.jpeg",
-          "description": {
-            "en": "Our bestselling pizza — premium pepperoni, mozzarella, and a drizzle of hot honey to finish.",
-            "fi": "Suosituin pizzamme — laadukasta pepperonia, mozzarellaa ja viimeistelyksi tulista hunajaa."
-          },
-          "featured": true,
-          "stars": 2
         },
         {
           "id": "formaggi-di-casa",
@@ -400,17 +345,8 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/formaggi-di-cassa.jpeg",
           "description": {
-            "en": "A celebration of four cheeses — mozzarella, gorgonzola, pecorino, and ricotta.",
-            "fi": "Neljän juuston juhla — mozzarellaa, gorgonzolaa, pecorinoa ja ricottaa."
-          }
-        },
-        {
-          "id": "primavera",
-          "name": { "en": "Primavera", "fi": "Primavera" },
-          "price": { "en": "€14.90", "fi": "€14.90" },
-          "description": {
-            "en": "Seasonal vegetables, mozzarella, and fresh herbs on a light tomato base.",
-            "fi": "Kauden vihanneksia, mozzarellaa ja tuoreita yrttejä kevyellä tomaattipohjalla."
+            "en": "Mozzarella Fior di Latte, smoked cheese, parmesan and Aura blue cheese.",
+            "fi": "Mozzarella Fior di Latte, savujuusto, parmesaani ja Aura-juusto."
           }
         },
         {
@@ -419,8 +355,8 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/pesto-pizza.jpeg",
           "description": {
-            "en": "Homemade basil pesto base, mozzarella, cherry tomatoes, and toasted pine nuts.",
-            "fi": "Kotitekoinen basilikapesto-pohja, mozzarellaa, kirsikkatomaatteja ja paahdettuja pinjansiemeniä."
+            "en": "Pesto base, Mozzarella Fior di Latte, cherry tomato, parmesan, arugula and extra virgin olive oil.",
+            "fi": "Pestopohja, Mozzarella Fior di Latte, kirsikkatomaatti, parmesaani, rucola ja ekstra-neitsytoliiviöljy."
           }
         },
         {
@@ -428,8 +364,8 @@
           "name": { "en": "Pollo Pesto", "fi": "Pollo Pesto" },
           "price": { "en": "€14.90", "fi": "€14.90" },
           "description": {
-            "en": "Grilled chicken, basil pesto, mozzarella, and sun-blushed tomatoes on a creamy white base.",
-            "fi": "Grillattua kanaa, basilikapestoa, mozzarellaa ja aurinkokypsiä tomaatteja kermaisella valkoisella pohjalla."
+            "en": "Mozzarella, pulled chicken, pesto, cherry tomato and parmesan.",
+            "fi": "Mozzarella, revitty kana, pesto, kirsikkatomaatti ja parmesaani."
           }
         },
         {
@@ -438,63 +374,99 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/carne-reale-pizza.jpeg",
           "description": {
-            "en": "Ground beef, spiced lamb, mozzarella, caramelised onion, and jalapeños on tomato sauce.",
-            "fi": "Jauhelihaa, maustettua lammasta, mozzarellaa, karamellisoitua sipulia ja jalapenoja tomaattikastikkeella."
+            "en": "Mozzarella, pulled beef, pepperoni, red onion and chili honey.",
+            "fi": "Mozzarella, revitty naudanliha, pepperoni, punasipuli ja chilihunaja."
           }
         },
         {
-          "id": "salmone-bianco",
-          "name": { "en": "Salmone Bianco", "fi": "Salmone Bianco" },
+          "id": "hot-honey-pepperoni",
+          "name": { "en": "Hot Honey Pepperoni", "fi": "Hot Honey Pepperoni" },
           "price": { "en": "€15.90", "fi": "€15.90" },
-          "image": "/images/dishes/salmone-bianco.jpeg",
+          "image": "/images/dishes/hot-honey-pepperoni-pizza.jpeg",
           "description": {
-            "en": "Smoked salmon, cream cheese, capers, red onion, and fresh dill on a white garlic base.",
-            "fi": "Savulohta, tuorejuustoa, kapriksia, punasipulia ja tuoretta tilliä valkoisella valkosipulipohjalla."
-          }
-        },
-        {
-          "id": "mare-bianca",
-          "name": { "en": "Mare Bianca", "fi": "Mare Bianca" },
-          "price": { "en": "€15.90", "fi": "€15.90" },
-          "image": "/images/dishes/mare-bianca.jpeg",
-          "description": {
-            "en": "Seafood medley with prawns and squid on a white garlic cream, finished with lemon zest.",
-            "fi": "Merenelävien sekoitusta katkaravuilla ja kalmareilla valkoisella valkosipulikermalla, viimeistelty sitruunankuorella."
-          }
-        },
-        {
-          "id": "bresaola",
-          "name": { "en": "Bresaola", "fi": "Bresaola" },
-          "price": { "en": "€15.90", "fi": "€15.90" },
-          "image": "/images/dishes/bresaola-pizza.jpeg",
-          "description": {
-            "en": "Air-dried bresaola, rocket, shaved parmesan, and truffle oil on a thin crispy base.",
-            "fi": "Ilmakuivattua bresaolaa, rucolaa, parmesanlastuja ja tryffeliöljyä ohuella ja rapealla pohjalla."
-          }
+            "en": "Mozzarella, pepperoni, hot honey and basil.",
+            "fi": "Mozzarella, pepperoni, tulinen hunaja ja basilika."
+          },
+          "featured": true,
+          "stars": 2
         },
         {
           "id": "burrata-pizza",
-          "name": { "en": "Burrata Pizza", "fi": "Burrata-pizza" },
+          "name": { "en": "Burrata", "fi": "Burrata" },
           "price": { "en": "€15.90", "fi": "€15.90" },
           "image": "/images/dishes/burrata-pizza.jpeg",
           "description": {
-            "en": "Fresh burrata on tomato sauce with cherry tomatoes, basil oil, and cracked black pepper.",
-            "fi": "Tuoretta burrataa tomaattikastikkeen päällä kirsikkatomaattien, basilikaöljyn ja rouhitun mustapippurin kera."
+            "en": "Mozzarella Fior di Latte, burrata, cherry tomato, arugula and extra virgin olive oil.",
+            "fi": "Mozzarella Fior di Latte, burrata, kirsikkatomaatti, rucola ja ekstra-neitsytoliiviöljy."
           },
           "featured": true,
           "stars": 2
         },
         {
           "id": "liora-pizza",
-          "name": { "en": "Liora Pizza", "fi": "Liora-pizza" },
+          "name": { "en": "Liora", "fi": "Liora" },
           "price": { "en": "€15.90", "fi": "€15.90" },
           "image": "/images/dishes/mediterranian-pizza.jpeg",
           "description": {
-            "en": "Our signature creation — a chef-curated combination of the finest Mediterranean ingredients.",
-            "fi": "Talon oma luomus — kokin kokoama yhdistelmä parhaita Välimeren raaka-aineita."
+            "en": "Mozzarella, feta cheese, bell pepper and red onion. After oven: döner meat and arugula.",
+            "fi": "Mozzarella, fetajuusto, paprika ja punasipuli. Uunin jälkeen: dönerliha ja rucola."
           },
           "featured": true,
           "stars": 2
+        },
+        {
+          "id": "liora-verde",
+          "name": { "en": "Liora Verde", "fi": "Liora Verde" },
+          "price": { "en": "€14.90", "fi": "€14.90" },
+          "description": {
+            "en": "Roasted eggplant, roasted zucchini, cherry tomatoes, vegan cheddar cheese, arugula and extra virgin olive oil.",
+            "fi": "Paahdettua munakoisoa, paahdettua kesäkurpitsaa, kirsikkatomaattia, vegaanista cheddarjuustoa, rucolaa ja ekstra-neitsytoliiviöljyä."
+          }
+        },
+        {
+          "id": "romeo-julia",
+          "name": { "en": "Romeo & Julia", "fi": "Romeo & Julia" },
+          "price": { "en": "€14.90", "fi": "€14.90" },
+          "description": {
+            "en": "Mozzarella, pizza ham strips, salami and Aura blue cheese.",
+            "fi": "Mozzarella, pizzasuikale, salami ja Aura-juusto."
+          }
+        },
+        {
+          "id": "bbq-bacon-pizza",
+          "name": { "en": "BBQ Bacon", "fi": "BBQ Bacon" },
+          "price": { "en": "€15.90", "fi": "€15.90" },
+          "description": {
+            "en": "Mozzarella, chicken, bacon, pineapple, red onion and BBQ sauce.",
+            "fi": "Mozzarella, broileri, pekoni, ananas, punasipuli ja BBQ-kastike."
+          }
+        },
+        {
+          "id": "frutti-di-mare",
+          "name": { "en": "Frutti di Mare", "fi": "Frutti di Mare" },
+          "price": { "en": "€16.90", "fi": "€16.90" },
+          "description": {
+            "en": "Mozzarella, tuna, shrimp and mussels.",
+            "fi": "Mozzarella, tonnikala, katkarapu ja simpukat."
+          }
+        },
+        {
+          "id": "inferno",
+          "name": { "en": "Inferno", "fi": "Inferno" },
+          "price": { "en": "€15.90", "fi": "€15.90" },
+          "description": {
+            "en": "Mozzarella Fior di Latte, salami, jalapeños, red onion and sweet chili mayonnaise.",
+            "fi": "Mozzarella Fior di Latte, salami, jalapeño, punasipuli ja sweet chili -majoneesi."
+          }
+        },
+        {
+          "id": "diavola",
+          "name": { "en": "Diavola", "fi": "Diavola" },
+          "price": { "en": "€14.90", "fi": "€14.90" },
+          "description": {
+            "en": "Mozzarella Fior di Latte, spicy salami, parmesan, extra virgin olive oil and fresh basil.",
+            "fi": "Mozzarella Fior di Latte, tulinen salami, parmesaani, ekstra neitsytoliiviöljy ja tuore basilika."
+          }
         },
         {
           "id": "diy-pizza",
@@ -502,8 +474,8 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/feta-pizza.jpeg",
           "description": {
-            "en": "Start with our hand-stretched base and build your dream pizza with your chosen toppings.",
-            "fi": "Aloita käsin venytetystä pohjastamme ja rakenna unelmiesi pizza valitsemillasi täytteillä."
+            "en": "Choose 4 toppings from our meat, cheese and vegetable selection. Vegan cheddar cheese available.",
+            "fi": "Valitse 4 täytettä liha-, juusto- ja kasvisvalikoimastamme. Vegaaninen cheddarjuusto saatavilla."
           }
         }
       ]
@@ -519,8 +491,8 @@
           "price": { "en": "€14.90", "fi": "€14.90" },
           "image": "/images/dishes/double-cheeseburger.jpeg",
           "description": {
-            "en": "Beef patty with three layers of melted cheese, lettuce, tomato, and our house burger sauce.",
-            "fi": "Naudanlihapihvi kolmella kerroksella sulatettua juustoa, salaattia, tomaattia ja talon burgerikastiketta."
+            "en": "150 g beef patty, cheddar, pickles, crispy onion, cheese sauce and paprika mayo.",
+            "fi": "150 g naudanlihapihvi, cheddar, suolakurkku, rapea sipuli, juustokastike ja paprikamajoneesi."
           }
         },
         {
@@ -529,21 +501,9 @@
           "price": { "en": "€16.90", "fi": "€16.90" },
           "image": "/images/dishes/bbq-bacon.jpeg",
           "description": {
-            "en": "Charcoal-grilled beef patty with crispy bacon, BBQ sauce, cheddar, and caramelised onions.",
-            "fi": "Hiiligrillattu naudanlihapihvi rapealla pekonilla, BBQ-kastikkeella, cheddarilla ja karamellisoidulla sipulilla."
+            "en": "150 g beef patty, cheddar, bacon, caramelized onion, pickles, BBQ sauce and smoke mayo.",
+            "fi": "150 g naudanlihapihvi, cheddar, pekoni, karamellisoitu sipuli, suolakurkku, BBQ-kastike ja savumajoneesi."
           }
-        },
-        {
-          "id": "monterey-jack",
-          "name": { "en": "Monterey Jack", "fi": "Monterey Jack" },
-          "price": { "en": "€17.90", "fi": "€17.90" },
-          "image": "/images/dishes/gourmet-burger.jpeg",
-          "description": {
-            "en": "Premium beef patty with Monterey Jack cheese, guacamole, jalapeños, and chipotle mayo.",
-            "fi": "Laadukas naudanlihapihvi Monterey Jack -juustolla, guacamolella, jalapenoilla ja chipotle-majoneesilla."
-          },
-          "featured": true,
-          "stars": 2
         },
         {
           "id": "the-boss-double",
@@ -551,8 +511,8 @@
           "price": { "en": "€19.90", "fi": "€19.90" },
           "image": "/images/dishes/double-beef-burger.jpeg",
           "description": {
-            "en": "Two charcoal-grilled beef patties, double cheese, crispy onions, and our secret boss sauce.",
-            "fi": "Kaksi hiiligrillattua naudanlihapihviä, tupla juusto, rapeaa sipulia ja salainen boss-kastikkeemme."
+            "en": "2 × 150 g beef patties, cheddar, bacon, caramelized onion, pickles, salad and truffle mayo.",
+            "fi": "2 × 150 g naudanlihapihviä, cheddar, pekoni, karamellisoitu sipuli, suolakurkku, salaatti ja tryffelimajoneesi."
           },
           "featured": true,
           "stars": 2
@@ -563,8 +523,8 @@
           "price": { "en": "€15.90", "fi": "€15.90" },
           "image": "/images/dishes/barbecue-pulled-chicken.jpeg",
           "description": {
-            "en": "Slow-cooked pulled chicken with smoky BBQ sauce, coleslaw, and pickles in a brioche bun.",
-            "fi": "Hitaasti haudutettua pulled chicken -kanaa savuisella BBQ-kastikkeella, coleslaw-salaatilla ja suolakurkuilla brioche-sämpylässä."
+            "en": "Pulled chicken, cheddar, coleslaw, marinated red onion, BBQ sauce and paprika mayo.",
+            "fi": "Revitty kana, cheddar, coleslaw, marinoitu punasipuli, BBQ-kastike ja paprikamajoneesi."
           }
         },
         {
@@ -572,8 +532,55 @@
           "name": { "en": "Smoky Vegan", "fi": "Smoky Vegan" },
           "price": { "en": "€18.90", "fi": "€18.90" },
           "description": {
-            "en": "Plant-based patty with smoked paprika aioli, avocado, grilled vegetables, and vegan cheese.",
-            "fi": "Kasvipohjainen pihvi savupaprika-aiolilla, avokadolla, grillatuilla vihanneksilla ja vegaanijuustolla."
+            "en": "Vegan premium patty, vegan cheddar, pickles, crispy onion and vegan paprika mayo.",
+            "fi": "Vegaaninen premium-pihvi, vegaaninen cheddar, suolakurkku, rapea sipuli ja vegaaninen paprikamajoneesi."
+          }
+        }
+      ]
+    },
+    {
+      "id": "kids",
+      "name": { "en": "Kids Menu", "fi": "Lasten annokset" },
+      "icon": "🧒",
+      "items": [
+        {
+          "id": "kids-doner-plate",
+          "name": { "en": "Kids' Döner Plate", "fi": "Lasten Döner Plate" },
+          "price": { "en": "€10.90", "fi": "€10.90" },
+          "image": "/images/dishes/kids-doner-plate.jpeg",
+          "description": {
+            "en": "Available with beef or chicken. Choose your side: rice, house fries or sliced potatoes. Includes a Trip juice and a lollipop.",
+            "fi": "Saatavilla naudan- tai kananlihalla. Valitse lisuke: riisi, talon ranskalaiset tai viipaleperunat. Sisältää Trip-mehun ja tikkarin."
+          }
+        },
+        {
+          "id": "kids-cheese-burger",
+          "name": { "en": "Kids' Cheese Burger", "fi": "Lasten Cheese Burger" },
+          "price": { "en": "€10.90", "fi": "€10.90" },
+          "image": "/images/dishes/kids-cheese-burger.jpeg",
+          "description": {
+            "en": "100 g beef patty, cheddar cheese, pickles, ketchup, paprika mayonnaise and house fries. Includes a Trip juice and a lollipop.",
+            "fi": "100 g naudanlihapihvi, cheddar, suolakurkku, ketsuppia, paprikamajoneesi sekä talon ranskalaiset. Sisältää Trip-mehun ja tikkarin."
+          }
+        },
+        {
+          "id": "kids-pizza",
+          "name": { "en": "Kids' Pizza", "fi": "Lasten Pizza" },
+          "price": { "en": "€10.90", "fi": "€10.90" },
+          "image": "/images/dishes/margherita.jpeg",
+          "description": {
+            "en": "Choose any 2 pizza toppings. Includes a Trip juice and a lollipop.",
+            "fi": "Valitse mitkä tahansa 2 pizzatäytettä. Sisältää Trip-mehun ja tikkarin."
+          }
+        },
+        {
+          "id": "kids-nuggets-fries",
+          "name": { "en": "Kids' Nuggets & Fries", "fi": "Lasten Nuggets & Ranskalaiset" },
+          "price": { "en": "€10.90", "fi": "€10.90" },
+          "image": "/images/dishes/kids-nuggets-fries.jpeg",
+          "description": {
+            "en": "Chicken nuggets served with house fries. Includes a Trip juice and a lollipop.",
+            "fi": "Kananugetit tarjoiltuna talon ranskalaisten kanssa. Sisältää Trip-mehun ja tikkarin."
           }
         }
       ]
@@ -609,8 +616,8 @@
           "price": { "en": "€5.90", "fi": "€5.90" },
           "image": "/images/dishes/parmesan-fries.jpeg",
           "description": {
-            "en": "Crispy fries tossed in shaved parmesan and house seasoning.",
-            "fi": "Rapeita ranskalaisia parmesanlastuissa ja talon mausteseoksessa."
+            "en": "House fries, parmesan and truffle mayo.",
+            "fi": "Ranskalaiset, parmesaani ja tryffelimajoneesi."
           }
         },
         {
@@ -619,8 +626,8 @@
           "price": { "en": "€5.90", "fi": "€5.90" },
           "image": "/images/dishes/loaded-fries.jpeg",
           "description": {
-            "en": "House fries topped with melted cheese, jalapeños, and our signature sauce.",
-            "fi": "Talon ranskalaiset sulatetun juuston, jalapenojen ja talon erikoiskastikkeen kera."
+            "en": "House fries, cheddar sauce, jalapeño, crispy onion and paprika mayo.",
+            "fi": "Ranskalaiset, cheddarkastike, jalapeño, rapea sipuli ja paprikamajoneesi."
           }
         }
       ]
@@ -636,30 +643,30 @@
           "price": { "en": "€7.90", "fi": "€7.90" },
           "image": "/images/dishes/baklava-with-icecream.jpeg",
           "description": {
-            "en": "Honey-soaked baklava with crushed pistachios paired with premium vanilla ice cream.",
-            "fi": "Hunajaan kastettua baklavaa murskatuilla pistaaseilla, tarjolla laadukkaan vaniljajäätelön kera."
+            "en": "Traditional baklava served with vanilla ice cream.",
+            "fi": "Perinteistä baklavaa tarjoiltuna vaniljajäätelön kanssa."
           },
           "featured": true,
           "stars": 2
         },
         {
           "id": "rice-pudding",
-          "name": { "en": "Rice Pudding", "fi": "Riisipuuro" },
+          "name": { "en": "Rice Pudding", "fi": "Riisivanukas" },
           "price": { "en": "€6.90", "fi": "€6.90" },
           "image": "/images/dishes/rice-pudding.jpeg",
           "description": {
-            "en": "Creamy Turkish rice pudding infused with rose water, chilled and dusted with cinnamon.",
-            "fi": "Samettista turkkilaista riisipuuroa ruusuvedellä maustettuna, jäähdytettynä ja kanelilla ripoteltuna."
+            "en": "Creamy rice pudding finished with cinnamon and crushed pistachios.",
+            "fi": "Kermainen riisivanukas viimeisteltynä kanelilla ja pistaasirouheella."
           }
         },
         {
           "id": "mud-cake",
-          "name": { "en": "Mud Cake", "fi": "Mud Cake" },
+          "name": { "en": "Mud Cake", "fi": "Mutakakku" },
           "price": { "en": "€7.90", "fi": "€7.90" },
           "image": "/images/dishes/mud-cake.jpeg",
           "description": {
-            "en": "Rich dense chocolate mud cake served warm with cream.",
-            "fi": "Täyteläinen ja tiivis suklainen mud cake tarjoiltuna lämpimänä kerman kera."
+            "en": "Mud cake served with vanilla ice cream.",
+            "fi": "Mutakakku tarjoiltuna vaniljajäätelön kanssa."
           }
         }
       ]
@@ -672,34 +679,44 @@
         {
           "id": "soft-drinks",
           "name": { "en": "Soft Drinks", "fi": "Virvoitusjuomat" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "price": { "en": "0.33l €3.50 · 0.5l €4.50 · 1.5l €6.90", "fi": "0,33 l 3,50 € · 0,5 l 4,50 € · 1,5 l 6,90 €" },
           "description": {
             "en": "A selection of chilled soft drinks and sodas.",
             "fi": "Valikoima jäähdytettyjä virvoitusjuomia ja limonadeja."
           }
         },
         {
-          "id": "non-alcoholic-beer",
-          "name": { "en": "Non-Alcoholic Beer", "fi": "Alkoholiton olut" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "id": "karhu-lager",
+          "name": { "en": "Karhu 0.0% Lager", "fi": "Karhu 0,0 % Lager" },
+          "price": { "en": "€4.90", "fi": "€4.90" },
+          "note": { "en": "0.33l", "fi": "0,33 l" },
           "description": {
-            "en": "Premium non-alcoholic lager and craft beer options.",
-            "fi": "Laadukkaita alkoholittomia lager- ja käsityöoluita."
+            "en": "Non-alcoholic lager.",
+            "fi": "Alkoholiton lager."
           }
         },
         {
-          "id": "non-alcoholic-wine",
-          "name": { "en": "Non-Alcoholic Wine", "fi": "Alkoholiton viini" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "id": "jacobs-creek-riesling",
+          "name": { "en": "Jacob's Creek Unvined Riesling 0.0%", "fi": "Jacob's Creek Unvined Riesling 0,0 %" },
+          "price": { "en": "12cl €6.90 · 16cl €8.90 · Bottle 75cl €35.00", "fi": "12 cl 6,90 € · 16 cl 8,90 € · Pullo 75 cl 35,00 €" },
           "description": {
-            "en": "Carefully selected non-alcoholic wine served at the perfect temperature.",
-            "fi": "Huolella valittua alkoholitonta viiniä tarjoiltuna täydellisessä lämpötilassa."
+            "en": "Non-alcoholic white wine.",
+            "fi": "Alkoholiton valkoviini."
+          }
+        },
+        {
+          "id": "jacobs-creek-shiraz",
+          "name": { "en": "Jacob's Creek Unvined Shiraz 0.0%", "fi": "Jacob's Creek Unvined Shiraz 0,0 %" },
+          "price": { "en": "12cl €6.90 · 16cl €8.90 · Bottle 75cl €35.00", "fi": "12 cl 6,90 € · 16 cl 8,90 € · Pullo 75 cl 35,00 €" },
+          "description": {
+            "en": "Non-alcoholic red wine.",
+            "fi": "Alkoholiton punaviini."
           }
         },
         {
           "id": "coffee",
           "name": { "en": "Coffee", "fi": "Kahvi" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "price": { "en": "€2.50", "fi": "€2.50" },
           "image": "/images/dishes/coffee.jpeg",
           "description": {
             "en": "Turkish coffee, espresso, and a full coffee menu available.",
@@ -709,7 +726,7 @@
         {
           "id": "tea",
           "name": { "en": "Tea", "fi": "Tee" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "price": { "en": "€2.50", "fi": "€2.50" },
           "image": "/images/dishes/tea.jpeg",
           "description": {
             "en": "A curated selection of teas including traditional Turkish çay.",
@@ -722,8 +739,8 @@
           "price": { "en": "€5.90", "fi": "€5.90" },
           "image": "/images/dishes/mocktail.jpeg",
           "description": {
-            "en": "Our house signature mocktail — a refreshing blend of seasonal fruits, botanicals, and sparkling water.",
-            "fi": "Talon oma mocktail — raikas sekoitus kauden hedelmiä, kasviuutteita ja kivennäisvettä."
+            "en": "Refreshing signature alcohol-free mocktail.",
+            "fi": "Raikas alkoholiton talon mocktail."
           },
           "featured": true,
           "stars": 2
@@ -738,19 +755,19 @@
         {
           "id": "weekday-buffet",
           "name": { "en": "Weekday Buffet", "fi": "Arkibuffet" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "price": { "en": "Adults €13.90 · Children 4–7 €7.90 · Children 8–12 €10.90 · Under 4 Free", "fi": "Aikuiset 13,90 € · Lapset 4–7 v 7,90 € · Lapset 8–12 v 10,90 € · Alle 4 v Ilmainen" },
           "description": {
-            "en": "All-inclusive weekday buffet: Fresh Salad Bar, Daily Hot Dishes, Pizza, Döner, Charcoal Grill, Fresh Bread, Coffee, Tea, and Juice.",
-            "fi": "Kaiken sisältävä arkibuffet: tuore salaattipöytä, päivittäiset lämpimät ruoat, pizza, döner, hiiligrilli, tuore leipä, kahvi, tee ja mehu."
+            "en": "Monday–Friday, 10:30–16:00. Includes fresh salad bar, daily hot dishes, pizza, döner, charcoal grill specialties, fresh bread, coffee, tea and juice. Soft drink or Ayran +€2.00.",
+            "fi": "Maanantai–perjantai klo 10:30–16:00. Sisältää laajan salaattipöydän, päivittäin vaihtuvat lämpimät ruoat, pizzaa, döneriä, hiiligrilliherkkuja, tuoretta leipää, kahvia, teetä ja mehua. Virvoitusjuoma tai Ayran +2,00 €."
           }
         },
         {
           "id": "weekend-buffet",
           "name": { "en": "Weekend Buffet", "fi": "Viikonloppubuffet" },
-          "price": { "en": "Ask server", "fi": "Kysy tarjoilijalta" },
+          "price": { "en": "Adults €16.90 · Children 4–7 €8.90 · Children 8–12 €11.90 · Under 4 Free", "fi": "Aikuiset 16,90 € · Lapset 4–7 v 8,90 € · Lapset 8–12 v 11,90 € · Alle 4 v Ilmainen" },
           "description": {
-            "en": "Our extended weekend buffet with a wider selection of dishes and a premium spread.",
-            "fi": "Laajennettu viikonloppubuffetimme, jossa laajempi annosvalikoima ja ylellinen tarjonta."
+            "en": "Saturday–Sunday, 11:00–16:00. Includes fresh salad bar, daily hot dishes, pizza, döner, charcoal grill specialties, fresh bread, coffee, tea and juice. Soft drink or Ayran +€2.00.",
+            "fi": "Lauantai ja sunnuntai klo 11:00–16:00. Sisältää laajan salaattipöydän, päivittäin vaihtuvat lämpimät ruoat, pizzaa, döneriä, hiiligrilliherkkuja, tuoretta leipää, kahvia, teetä ja mehua. Virvoitusjuoma tai Ayran +2,00 €."
           }
         }
       ]

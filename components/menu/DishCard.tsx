@@ -64,7 +64,7 @@ export default function DishCard({ item, index = 0 }: DishCardProps) {
                 <p className="text-cream-dark text-xs font-body leading-relaxed line-clamp-2">{tr(item.description)}</p>
               )}
             </div>
-            <span className="shrink-0 font-body font-semibold text-gold text-sm whitespace-nowrap">{tr(item.price)}</span>
+            <span className="shrink-0 max-w-[45%] font-body font-semibold text-gold text-sm text-right">{tr(item.price)}</span>
           </div>
         </div>
       </motion.div>

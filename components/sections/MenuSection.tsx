@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Search, X } from 'lucide-react'
+import { Search, X, ChevronLeft, ChevronRight } from 'lucide-react'
 import Section from '@/components/common/Section'
 import MenuGrid from '@/components/menu/MenuGrid'
 import type { MenuCategory } from '@/types'
@@ -17,6 +17,27 @@ export default function MenuSection({ categories }: MenuSectionProps) {
   const [activeCategory, setActiveCategory] = useState('all')
   const [query, setQuery] = useState('')
   const { t, tr, locale } = useLanguage()
+  const tabsRef = useRef<HTMLDivElement>(null)
+  const [canScrollLeft, setCanScrollLeft] = useState(false)
+  const [canScrollRight, setCanScrollRight] = useState(false)
+
+  const updateTabsScrollState = () => {
+    const el = tabsRef.current
+    if (!el) return
+    setCanScrollLeft(el.scrollLeft > 10)
+    setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10)
+  }
+
+  const scrollTabs = (dir: 'left' | 'right') => {
+    const el = tabsRef.current
+    if (!el) return
+    el.scrollBy({ left: dir === 'right' ? 220 : -220, behavior: 'smooth' })
+    setTimeout(updateTabsScrollState, 400)
+  }
+
+  useEffect(() => {
+    updateTabsScrollState()
+  }, [categories])
 
   const allItems = useMemo(() => categories.flatMap((c) => c.items), [categories])
 
@@ -35,8 +56,8 @@ export default function MenuSection({ categories }: MenuSectionProps) {
   }, [activeCategory, query, allItems, categories, locale])
 
   const tabs = [
-    { id: 'all', name: t('menu.allTab'), icon: '✦' },
-    ...categories.map((c) => ({ id: c.id, name: tr(c.name), icon: c.icon })),
+    { id: 'all', name: t('menu.allTab') },
+    ...categories.map((c) => ({ id: c.id, name: tr(c.name) })),
   ]
 
   return (
@@ -44,7 +65,7 @@ export default function MenuSection({ categories }: MenuSectionProps) {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
         <motion.div
-          className="text-center mb-14"
+          className="text-center mb-10"
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
@@ -58,12 +79,6 @@ export default function MenuSection({ categories }: MenuSectionProps) {
             <span className="italic text-gold">{t('menu.titleAccent')}</span>
           </motion.h2>
           <motion.div variants={fadeInUp} className="gold-divider mx-auto mt-6" />
-          <motion.p
-            variants={fadeInUp}
-            className="mt-5 text-cream-muted max-w-xl mx-auto text-base font-body font-light leading-relaxed"
-          >
-            {t('menu.subtitle')}
-          </motion.p>
         </motion.div>
 
         {/* Search */}
@@ -99,35 +114,59 @@ export default function MenuSection({ categories }: MenuSectionProps) {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="flex flex-wrap gap-2 justify-center mb-12"
+          className="relative mb-12"
         >
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              onClick={() => setActiveCategory(tab.id)}
-              className={`flex items-center gap-1.5 px-4 py-2 text-xs font-body uppercase tracking-widest transition-all duration-300 border ${
-                activeCategory === tab.id
-                  ? 'bg-gold text-luxury-black border-gold'
-                  : 'border-luxury-border text-cream-dark hover:border-gold/40 hover:text-cream'
-              }`}
-            >
-              <span>{tab.icon}</span>
-              <span>{tab.name}</span>
-            </button>
-          ))}
+          {/* Edge fades */}
+          <div className={`pointer-events-none absolute left-0 top-0 bottom-0 w-10 bg-gradient-to-r from-luxury-dark to-transparent z-10 transition-opacity duration-300 ${canScrollLeft ? 'opacity-100' : 'opacity-0'}`} />
+          <div className={`pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-luxury-dark to-transparent z-10 transition-opacity duration-300 ${canScrollRight ? 'opacity-100' : 'opacity-0'}`} />
+
+          {/* Scroll arrows (desktop) */}
+          <button
+            onClick={() => scrollTabs('left')}
+            disabled={!canScrollLeft}
+            className="hidden sm:flex absolute -left-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 items-center justify-center bg-luxury-dark border border-gold/20 text-cream-dark hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none"
+            aria-label={t('menu.scrollLeftAria')}
+          >
+            <ChevronLeft size={14} />
+          </button>
+          <button
+            onClick={() => scrollTabs('right')}
+            disabled={!canScrollRight}
+            className="hidden sm:flex absolute -right-4 top-1/2 -translate-y-1/2 z-20 w-8 h-8 items-center justify-center bg-luxury-dark border border-gold/20 text-cream-dark hover:text-gold hover:border-gold transition-all duration-300 disabled:opacity-0 disabled:pointer-events-none"
+            aria-label={t('menu.scrollRightAria')}
+          >
+            <ChevronRight size={14} />
+          </button>
+
+          <div
+            ref={tabsRef}
+            onScroll={updateTabsScrollState}
+            className="flex gap-2 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-proximity px-1"
+          >
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveCategory(tab.id)}
+                className={`flex-none snap-start whitespace-nowrap px-4 py-2 text-xs font-body uppercase tracking-widest transition-all duration-300 border ${
+                  activeCategory === tab.id
+                    ? 'bg-gold text-luxury-black border-gold'
+                    : 'border-luxury-border text-cream-dark hover:border-gold/40 hover:text-cream'
+                }`}
+              >
+                {tab.name}
+              </button>
+            ))}
+          </div>
         </motion.div>
 
-        {/* Results count */}
-        <div className="flex items-center justify-between mb-6">
-          <p className="text-cream-dark text-xs font-body uppercase tracking-wider">
-            {filteredItems.length} {filteredItems.length === 1 ? t('menu.dish') : t('menu.dishes')}
-          </p>
-          {query && (
+        {/* Search results indicator */}
+        {query && (
+          <div className="flex items-center justify-end mb-6">
             <p className="text-cream-dark text-xs font-body">
               {t('menu.resultsFor')} &ldquo;<span className="text-gold">{query}</span>&rdquo;
             </p>
-          )}
-        </div>
+          </div>
+        )}
 
         {/* Grid */}
         <AnimatePresence mode="wait">

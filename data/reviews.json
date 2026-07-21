@@ -14,8 +14,8 @@
     },
     {
       "id": "r2",
-      "name": "Marcus Hoffmann",
-      "initials": "MH",
+      "name": "Mikko Virtanen",
+      "initials": "MV",
       "rating": 5,
       "review": {
         "en": "The Burrata Pizza is a revelation. That combination of perfectly charred crust and cool, creamy burrata is genuinely one of the best things I have eaten this year. The service matches the quality.",
@@ -38,8 +38,8 @@
     },
     {
       "id": "r4",
-      "name": "James Calloway",
-      "initials": "JC",
+      "name": "Antti Laine",
+      "initials": "AL",
       "rating": 5,
       "review": {
         "en": "The Boss Double Burger deserves its name. Two perfectly charcoal-grilled patties, extraordinary depth of flavour, and that sauce — I am still thinking about it three weeks later.",
