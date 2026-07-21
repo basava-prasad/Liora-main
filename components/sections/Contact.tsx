@@ -72,7 +72,7 @@ export default function Contact() {
                 <span className="text-gold text-base">Salo 24100</span>
               </p>
               <a
-                href="https://maps.google.com"
+                href="https://maps.app.goo.gl/oSEKSxmdmMfhKiDY9?g_st=iwb"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 btn-outline text-xs py-2.5 px-6"

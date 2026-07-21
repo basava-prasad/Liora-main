@@ -34,14 +34,17 @@ async function main() {
     return
   }
 
-  const docs = reviews.slice(0, 3).map((r) => ({
-    name: r.name,
-    initials: r.initials,
-    rating: r.rating,
-    review: r.review.en,
-    dish: r.dish?.en,
-    status: 'approved',
-  }))
+  const docs = reviews.slice(0, 5).map((r) => {
+    const lang = r.id === 'r1' ? 'en' : 'fi'
+    return {
+      name: r.name,
+      initials: r.initials,
+      rating: r.rating,
+      review: r.review[lang],
+      dish: r.dish?.[lang],
+      status: 'approved',
+    }
+  })
 
   await Review.insertMany(docs)
   console.log(`Seeded ${docs.length} reviews as approved.`)

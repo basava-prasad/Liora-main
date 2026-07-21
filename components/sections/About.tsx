@@ -49,8 +49,21 @@ export default function About() {
               viewport={{ once: true }}
               transition={{ delay: 0.4, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
             >
-              <p className="font-display text-3xl gold-text">2019</p>
-              <p className="text-cream-dark text-xs font-body mt-1 tracking-wide uppercase">{t('about.estIn')}</p>
+              <p className="font-display text-3xl text-luxury-dark">2026</p>
+              <p className="text-luxury-dark text-xs font-body mt-1 tracking-wide uppercase leading-snug">
+                {(() => {
+                  const words = t('about.estIn').split(' ')
+                  const last = words[words.length - 1]
+                  const rest = words.slice(0, -1).join(' ')
+                  return (
+                    <>
+                      {rest}
+                      <br />
+                      {last}
+                    </>
+                  )
+                })()}
+              </p>
             </motion.div>
             {/* Gold border accent */}
             <div className="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-gold/40" />

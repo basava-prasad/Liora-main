@@ -33,7 +33,7 @@ export const translations = {
         'LIORA was born from a simple but profound belief: that food is the most powerful vehicle for culture, memory, and connection. Our founders, inspired by the sun-soaked coastlines of the Mediterranean, set out to create a space where those ancient flavours could be experienced in their most refined form.',
       paragraph2:
         'From our hand-stretched pizzas to the slow burn of our charcoal grill, every element at LIORA is an intentional expression of culinary craft. We source the finest ingredients, respect traditional techniques, and add our own creative vision to deliver something truly unforgettable.',
-      estIn: 'Est. in Salo',
+      estIn: 'Est. in Perustettu Salossa',
       imageAlt: 'LIORA open kitchen',
       pillarCraftTitle: 'Craft',
       pillarCraftDesc:
@@ -220,7 +220,7 @@ export const translations = {
         'LIORA syntyi yksinkertaisesta mutta syvästä uskomuksesta: ruoka on voimakkain väline kulttuurin, muistojen ja yhteyden välittämiseen. Perustajamme, auringon hyväilemien Välimeren rantaviivojen inspiroimina, halusivat luoda paikan, jossa nuo ikivanhat maut voisi kokea hienostuneimmassa muodossaan.',
       paragraph2:
         'Käsin venytetyistä pizzoistamme hiiligrillimme hitaaseen hehkuun — jokainen elementti LIORAssa on tietoinen ilmaisu kulinaarisesta käsityöstä. Hankimme parhaat raaka-aineet, kunnioitamme perinteisiä valmistustapoja ja lisäämme oman luovan näkemyksemme luodaksemme jotain todella unohtumatonta.',
-      estIn: 'Perustettu Salossa',
+      estIn: 'Est. in Perustettu Salossa',
       imageAlt: 'LIORAn avokeittiö',
       pillarCraftTitle: 'Käsityö',
       pillarCraftDesc:

@@ -2,8 +2,8 @@
   "reviews": [
     {
       "id": "r1",
-      "name": "Sophia Laurent",
-      "initials": "SL",
+      "name": "Charlotte Ashworth",
+      "initials": "CA",
       "rating": 5,
       "review": {
         "en": "An extraordinary dining experience. The Liora Mixed Grill is simply the finest charcoal grill I have tasted outside of Istanbul. The atmosphere is refined yet warm — we will absolutely be back.",
@@ -26,8 +26,8 @@
     },
     {
       "id": "r3",
-      "name": "Aisha Nkrumah",
-      "initials": "AN",
+      "name": "Anna Korhonen",
+      "initials": "AK",
       "rating": 5,
       "review": {
         "en": "I hosted a business dinner for eight here and LIORA exceeded every expectation. Staff were impeccable, food beautifully presented, and the lamb chops were cooked to absolute perfection.",
@@ -50,8 +50,8 @@
     },
     {
       "id": "r5",
-      "name": "Elena Vassiliev",
-      "initials": "EV",
+      "name": "Elina Mäkinen",
+      "initials": "EM",
       "rating": 5,
       "review": {
         "en": "Brought my parents here for their anniversary. The Meze Plate was a journey through the Mediterranean — each component clearly made with real care. LIORA has become our family's special occasion restaurant.",
@@ -62,8 +62,8 @@
     },
     {
       "id": "r6",
-      "name": "Thomas Bergmann",
-      "initials": "TB",
+      "name": "Tomi Peltonen",
+      "initials": "TP",
       "rating": 5,
       "review": {
         "en": "The Grilled Salmon was cooked to perfection — flaky, moist, beautifully seasoned. The ambience is sophisticated without feeling stuffy. Exactly what a fine dining experience should feel like.",
@@ -74,8 +74,8 @@
     },
     {
       "id": "r7",
-      "name": "Priya Chandran",
-      "initials": "PC",
+      "name": "Piia Nieminen",
+      "initials": "PN",
       "rating": 4,
       "review": {
         "en": "Exceptional quality across the board. The Hot Honey Pepperoni pizza has the perfect balance of sweet heat. LIORA clearly takes pride in every single detail — from the plating to the warm service.",
@@ -86,8 +86,8 @@
     },
     {
       "id": "r8",
-      "name": "Rafael Mendes",
-      "initials": "RM",
+      "name": "Jussi Salonen",
+      "initials": "JS",
       "rating": 5,
       "review": {
         "en": "Took my wife here for our anniversary. From the moment we arrived, the experience was seamless. The Baklava and Ice Cream was the perfect ending to a truly perfect evening.",
