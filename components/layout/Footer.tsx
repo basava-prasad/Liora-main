@@ -7,7 +7,7 @@ import { useLanguage } from '@/lib/i18n/LanguageContext'
 const SocialLinks = [
   {
     label: 'Instagram',
-    href: '#',
+    href: 'https://www.instagram.com/liora.restaurant?igsh=N3p5cTU3d3dxMmdi',
     icon: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" width={15} height={15}>
         <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
