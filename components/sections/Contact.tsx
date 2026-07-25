@@ -76,6 +76,7 @@ export default function Contact() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="mt-6 btn-outline text-xs py-2.5 px-6"
+                aria-label="Open LIORA Restaurant location in Google Maps"
               >
                 {t('contact.openInMaps')}
               </a>

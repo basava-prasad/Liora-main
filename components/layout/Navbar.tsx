@@ -59,11 +59,12 @@ export default function Navbar() {
             <a
               href="#"
               className="relative group shrink-0"
+              aria-label="LIORA Restaurant — return to top"
               onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}
             >
               <Image
                 src="/images/logo/logo.png"
-                alt="LIORA"
+                alt="LIORA Fine Mediterranean Restaurant logo"
                 width={1945}
                 height={808}
                 priority
@@ -72,7 +73,7 @@ export default function Navbar() {
             </a>
 
             {/* Desktop Nav */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-8" aria-label="Main navigation">
               {NAV_LINKS.map((link) => (
                 <a
                   key={link.href}
@@ -124,10 +125,10 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
-            <nav className="flex flex-col items-center gap-8">
+            <nav className="flex flex-col items-center gap-8" aria-label="Mobile navigation">
               <Image
                 src="/images/logo/logo.png"
-                alt="LIORA"
+                alt="LIORA Fine Mediterranean Restaurant logo"
                 width={1945}
                 height={808}
                 className="h-16 w-auto mb-4"

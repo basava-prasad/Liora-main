@@ -41,7 +41,11 @@ export default function Footer() {
   const { t, tr } = useLanguage()
 
   return (
-    <footer className="bg-luxury-dark border-t border-gold/10">
+    <footer
+      className="bg-luxury-dark border-t border-gold/10"
+      role="contentinfo"
+      aria-label="Site footer"
+    >
       {/* Main footer */}
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
