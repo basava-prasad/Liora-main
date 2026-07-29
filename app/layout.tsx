@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { Playfair_Display, Inter, Cormorant_Garamond } from 'next/font/google'
 import './globals.css'
 import LenisProvider from '@/components/providers/LenisProvider'
@@ -120,9 +121,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+  const measurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID
+  const shouldLoadAnalytics = process.env.NODE_ENV === 'production' && Boolean(measurementId)
+
   return (
     <html lang="en" className={`${playfair.variable} ${inter.variable} ${cormorant.variable}`}>
       <body className="font-body bg-luxury-black text-cream antialiased">
+        {shouldLoadAnalytics && measurementId ? <GoogleAnalytics gaId={measurementId} /> : null}
         {/* Restaurant JSON-LD structured data — injected in <head> by Next.js */}
         <RestaurantSchema />
         <LanguageProvider>
