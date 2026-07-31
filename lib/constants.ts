@@ -18,9 +18,9 @@ export const CONTACT_INFO = {
 }
 
 export const OPENING_HOURS: { days: LocalizedText; hours: string }[] = [
-  { days: { en: 'Mon–Thu', fi: 'Ma–To' }, hours: '10.30–22.00' },
-  { days: { en: 'Fri', fi: 'Pe' }, hours: '10.30–23.00' },
-  { days: { en: 'Sat', fi: 'La' }, hours: '11.00–23.00' },
+  { days: { en: 'Mon–Thu', fi: 'Ma–To' }, hours: '10.30–21.00' },
+  { days: { en: 'Fri', fi: 'Pe' }, hours: '10.30–22.00' },
+  { days: { en: 'Sat', fi: 'La' }, hours: '11.00–22.00' },
   { days: { en: 'Sun', fi: 'Su' }, hours: '11.00–21.00' },
 ]
 
