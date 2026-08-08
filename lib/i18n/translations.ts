@@ -73,23 +73,23 @@ export const translations = {
     },
     chef: {
       label: 'The Culinary Mind',
-      titleMain: 'Meet the',
+      titleMain: 'Head',
       titleAccent: 'Chef',
       quote:
         "Every dish I create is a letter written to a memory — a coastal market in Istanbul, a grandmother's kitchen in Ankara, the scent of olive groves at dawn.",
       bio1:
-        'Chef Mehmet Yilmaz has honed his craft in Istanbul and across some of Europe’s finest kitchens, shaped by a single conviction: that the most extraordinary meals are those rooted in place and memory. LIORA is where that pursuit finally comes home.',
+        'Head Chef Orhan has more than 30 years of experience in Mediterranean cuisine and has also worked for many years in restaurants in London. His expertise, passion and uncompromising commitment to quality can be seen in every LIORA dish.',
       bio2:
-        'Having just opened its doors, LIORA is Chef Yilmaz’s love letter to Mediterranean and Turkish tradition — from the charcoal-kissed proteins of the Levant to the wood-fired pizzas of the Campanian coast. Every dish is freshly imagined, built on seasonal ingredients, and crafted to give every guest who walks in an experience worth remembering from day one.',
-      name: 'Chef Mehmet Yilmaz',
-      role: 'Executive Chef & Co-Founder, LIORA',
+        'Traditional recipes, high-quality ingredients and careful preparation are the foundation of our kitchen.',
+      name: 'Head Chef Orhan',
+      role: 'Head Chef',
       accoladeExcellenceLabel: 'Menu Categories',
       accoladeExcellenceValue: '11',
       accoladeDishesLabel: 'On Our Menu',
       accoladeDishesValue: '60+ Dishes',
       accoladeGuestsLabel: 'Passion in Every Dish',
       accoladeGuestsValue: '100%',
-      chefImageAlt: 'Chef Mehmet Yilmaz at work',
+      chefImageAlt: 'Head Chef Orhan at work',
       kitchenImageAlt: 'LIORA kitchen {n}',
     },
     gallery: {
@@ -260,23 +260,23 @@ export const translations = {
     },
     chef: {
       label: 'Kulinaarinen mielenlaatu',
-      titleMain: 'Tapaa',
-      titleAccent: 'kokkimme',
+      titleMain: 'Keittiömestari',
+      titleAccent: '',
       quote:
         'Jokainen annos, jonka luon, on kirje muistolle — rantatori Istanbulissa, isoäidin keittiö Ankarassa, oliivilehtojen tuoksu aamunkoitteessa.',
       bio1:
-        'Kokki Mehmet Yilmaz on hionut taitoaan Istanbulissa ja Euroopan parhaissa keittiöissä, yhden vakaumuksen ohjaamana: ainutlaatuisimmat ateriat ovat niitä, jotka juurtuvat paikkaan ja muistoon. LIORAssa tämä matka löytää vihdoin kotinsa.',
+        'Keittiömestari Orhanilla on yli 30 vuoden kokemus Välimeren keittiöstä, ja hän on työskennellyt useita vuosia myös lontoolaisissa ravintoloissa. Hänen asiantuntemuksensa, intohimonsa ja tinkimätön sitoutumisensa laatuun näkyvät jokaisessa LIORAn annoksessa.',
       bio2:
-        'Juuri ovensa avannut LIORA on kokki Yilmazin rakkaudentunnustus Välimeren ja Turkin ruokaperinteelle — Levantin hiilellä maustetuista proteiineista Campanian rannikon puu-uunipizzoihin. Jokainen annos suunnitellaan tuorein silmin, kauden raaka-aineista, jotta jokainen vieras saa jo ensimmäisestä käynnistä lähtien muistettavan kokemuksen.',
-      name: 'Kokki Mehmet Yilmaz',
-      role: 'Keittiöpäällikkö & perustajajäsen, LIORA',
+        'Perinteiset reseptit, korkealaatuiset raaka-aineet ja huolellinen valmistus ovat keittiömme perusta.',
+      name: 'Keittiömestari Orhan',
+      role: 'Keittiömestari',
       accoladeExcellenceLabel: 'Ruokalistan osiota',
       accoladeExcellenceValue: '11',
       accoladeDishesLabel: 'Ruokalistallamme',
       accoladeDishesValue: '60+ annosta',
       accoladeGuestsLabel: 'Intohimoa joka annoksessa',
       accoladeGuestsValue: '100 %',
-      chefImageAlt: 'Kokki Mehmet Yilmaz työssään',
+      chefImageAlt: 'Keittiömestari Orhan työssään',
       kitchenImageAlt: 'LIORAn keittiö {n}',
     },
     gallery: {

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import { getImageProps } from 'next/image'
 import { motion } from 'framer-motion'
-import { ChevronDown, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const EASE: [number, number, number, number] = [0.22, 1, 0.36, 1]
@@ -55,10 +55,6 @@ const textVariants = {
     y: 0,
     transition: { duration: 1, ease: EASE, delay: i * 0.18 + 0.3 },
   }),
-}
-
-const scrollToNext = () => {
-  document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })
 }
 
 // True art direction (different crops per breakpoint via <picture>), not a
@@ -319,25 +315,6 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <motion.button
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2 cursor-pointer group bg-transparent border-0"
-        onClick={scrollToNext}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 0.8 }}
-        aria-label={t('hero.scrollAria')}
-      >
-        <span className="text-cream/70 text-xs tracking-[0.25em] uppercase font-body group-hover:text-gold/60 transition-colors duration-300">
-          {t('hero.scroll')}
-        </span>
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
-          transition={{ repeat: Infinity, duration: 1.8, ease: 'easeInOut' }}
-        >
-          <ChevronDown size={18} className="text-gold/50 group-hover:text-gold transition-colors duration-300" />
-        </motion.div>
-      </motion.button>
     </section>
   )
 }
