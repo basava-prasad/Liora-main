@@ -36,17 +36,18 @@ export async function POST(req: NextRequest) {
   // Send notification email — failure must never block the successful response
   try {
     const resend = new Resend(process.env.RESEND_API_KEY)
-    const toEmail = process.env.RESERVATION_NOTIFICATION_EMAIL
+    const toEmailRaw = process.env.RESERVATION_NOTIFICATION_EMAIL
     const fromEmail = process.env.RESEND_FROM_EMAIL
 
-    if (!toEmail || !fromEmail) {
+    if (!toEmailRaw || !fromEmail) {
       console.warn('[Reservations] RESERVATION_NOTIFICATION_EMAIL or RESEND_FROM_EMAIL is not set — skipping notification email.')
     } else {
+      const toEmails = toEmailRaw.split(',').map(e => e.trim()).filter(Boolean)
       const { name, email, phone, date, time, guests, specialRequests, status } = reservation
 
       await resend.emails.send({
         from: fromEmail,
-        to: toEmail,
+        to: toEmails,
         subject: 'New Reservation – Liora Restaurant',
         html: `
           <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a">
