@@ -11,12 +11,12 @@ export const translations = {
       toggleMenu: 'Toggle menu',
     },
     hero: {
-      imageAlt: 'LIORA Restaurant — Fine Mediterranean Dining',
-      label: 'Fine Mediterranean Dining',
-      titleLine1: 'Where Every Meal',
-      titleLine2: 'Becomes a Memory',
+      imageAlt: 'LIORA Restaurant — Authentic Mediterranean Flavors in Salo',
+      label: 'Buffet • Authentic Döner • Charcoal Grill • Handmade Pizzas',
+      titleLine1: 'Authentic Mediterranean',
+      titleLine2: 'Flavors in Salo',
       subtitle:
-        'Mediterranean cuisine crafted with passion, served in an atmosphere designed to stay with you long after the last course.',
+        'Liora brings together a generous buffet, house-made döner, an authentic charcoal grill, and handmade pizzas. Everything is prepared with high-quality ingredients and great passion.',
       exploreMenu: 'Explore Our Menu',
       bookTable: 'Book a Table',
       scroll: 'Scroll',
@@ -30,20 +30,20 @@ export const translations = {
       titleLine1: 'Born from a Passion',
       titleLine2: 'for the Mediterranean',
       paragraph1:
-        'LIORA was born from a simple but profound belief: that food is the most powerful vehicle for culture, memory, and connection. Our founders, inspired by the sun-soaked coastlines of the Mediterranean, set out to create a space where those ancient flavours could be experienced in their most refined form.',
+        'Liora was born from a love of Mediterranean food culture. We want to bring authentic flavors, high-quality ingredients, and traditional cooking methods to Salo.',
       paragraph2:
-        'From our hand-stretched pizzas to the slow burn of our charcoal grill, every element at LIORA is an intentional expression of culinary craft. We source the finest ingredients, respect traditional techniques, and add our own creative vision to deliver something truly unforgettable.',
+        'Our food is carefully prepared from scratch. House-made döner, meats cooked on the charcoal grill, handmade pizzas, and our changing buffet are at the heart of Liora.',
       estIn: 'Est. in Perustettu Salossa',
       imageAlt: 'LIORA open kitchen',
-      pillarCraftTitle: 'Craft',
+      pillarCraftTitle: 'Craftsmanship',
       pillarCraftDesc:
-        'Every dish is prepared with meticulous attention — from hand-rolled dolma to our signature charcoal-grilled meats.',
+        'Our food is carefully prepared from scratch. House-made döner, meats cooked on the charcoal grill, handmade pizzas, and our changing buffet are at the heart of Liora.',
       pillarAuthenticityTitle: 'Authenticity',
       pillarAuthenticityDesc:
-        'We draw from centuries of Mediterranean and Turkish culinary tradition, honouring the flavours that defined a culture.',
-      pillarExperienceTitle: 'Experience',
+        'Our recipes are rooted in Turkish and Mediterranean culinary traditions. Authentic spices and high-quality ingredients bring out the original flavors.',
+      pillarExperienceTitle: 'The Experience',
       pillarExperienceDesc:
-        'Dining at LIORA is more than a meal. It is an occasion crafted from the moment you arrive to the last lingering flavour.',
+        'At Liora, delicious food, warm service, and a welcoming atmosphere come together – from lunch to dinner and shared moments.',
     },
     signatureDishes: {
       label: 'Culinary Masterpieces',
@@ -78,7 +78,7 @@ export const translations = {
       quote:
         "Every dish I create is a letter written to a memory — a coastal market in Istanbul, a grandmother's kitchen in Ankara, the scent of olive groves at dawn.",
       bio1:
-        'Head Chef Orhan has more than 30 years of experience in Mediterranean cuisine and has also worked for many years in restaurants in London. His expertise, passion and uncompromising commitment to quality can be seen in every LIORA dish.',
+        'Orhan has over 30 years of experience in Mediterranean cuisine, as well as extensive experience working in London restaurants. His expertise and passion can be seen in every dish at Liora.',
       bio2:
         'Traditional recipes, high-quality ingredients and careful preparation are the foundation of our kitchen.',
       name: 'Head Chef Orhan',
@@ -198,12 +198,12 @@ export const translations = {
       toggleMenu: 'Avaa valikko',
     },
     hero: {
-      imageAlt: 'LIORA Ravintola — hienostunutta Välimeren ruokaa',
-      label: 'Hienostunutta Välimeren ruokaa',
-      titleLine1: 'Jokainen ateria',
-      titleLine2: 'muuttuu muistoksi',
+      imageAlt: 'LIORA Ravintola — Aitoa Välimeren makua Salossa',
+      label: 'Buffet • Aito döner • Hiiligrilli • Käsintehdyt pizzat',
+      titleLine1: 'Aitoa Välimeren',
+      titleLine2: 'makua Salossa',
       subtitle:
-        'Intohimolla valmistettua Välimeren keittiötä, tarjoiltuna tunnelmassa, joka jää mieleesi kauan viimeisen ruokalajin jälkeen.',
+        'Liora yhdistää runsaan buffetin, itse valmistetun dönerin, aidon hiiligrillin ja käsintehdyt pizzat. Kaikki valmistetaan laadukkaista raaka-aineista suurella intohimolla.',
       exploreMenu: 'Tutustu ruokalistaan',
       bookTable: 'Varaa pöytä',
       scroll: 'Vieritä',
@@ -217,20 +217,20 @@ export const translations = {
       titleLine1: 'Syntynyt intohimosta',
       titleLine2: 'Välimeren makuihin',
       paragraph1:
-        'LIORA syntyi yksinkertaisesta mutta syvästä uskomuksesta: ruoka on voimakkain väline kulttuurin, muistojen ja yhteyden välittämiseen. Perustajamme, auringon hyväilemien Välimeren rantaviivojen inspiroimina, halusivat luoda paikan, jossa nuo ikivanhat maut voisi kokea hienostuneimmassa muodossaan.',
+        'Liora syntyi rakkaudesta Välimeren ruokakulttuuriin. Haluamme tuoda Saloon aitoja makuja, laadukkaita raaka-aineita ja perinteisiä valmistustapoja.',
       paragraph2:
-        'Käsin venytetyistä pizzoistamme hiiligrillimme hitaaseen hehkuun — jokainen elementti LIORAssa on tietoinen ilmaisu kulinaarisesta käsityöstä. Hankimme parhaat raaka-aineet, kunnioitamme perinteisiä valmistustapoja ja lisäämme oman luovan näkemyksemme luodaksemme jotain todella unohtumatonta.',
+        'Ruoka valmistetaan huolella alusta asti. Itse valmistettu döner, hiiligrillissä kypsennetyt lihat, käsintehdyt pizzat ja vaihtuva buffet ovat Lioran sydän.',
       estIn: 'Est. in Perustettu Salossa',
       imageAlt: 'LIORAn avokeittiö',
       pillarCraftTitle: 'Käsityö',
       pillarCraftDesc:
-        'Jokainen annos valmistetaan huolella — käsin käärityistä dolmista talon suosikkiin, hiiligrillattuihin lihoihin.',
+        'Ruoka valmistetaan huolella alusta asti. Itse valmistettu döner, hiiligrillissä kypsennetyt lihat, käsintehdyt pizzat ja vaihtuva buffet ovat Lioran sydän.',
       pillarAuthenticityTitle: 'Autenttisuus',
       pillarAuthenticityDesc:
-        'Ammennamme vuosisatoja vanhasta Välimeren ja Turkin ruokaperinteestä, kunnioittaen makuja, jotka ovat muovanneet kokonaista kulttuuria.',
+        'Reseptimme pohjautuvat Turkin ja Välimeren ruokaperinteisiin. Aidot mausteet ja laadukkaat raaka-aineet tuovat esiin alkuperäiset maut.',
       pillarExperienceTitle: 'Elämys',
       pillarExperienceDesc:
-        'LIORAssa ruokaileminen on enemmän kuin ateria. Se on tapahtuma, joka rakentuu saapumishetkestä viimeiseen makuun asti.',
+        'Liorassa yhdistyvät herkullinen ruoka, lämmin palvelu ja viihtyisä tunnelma – lounaasta illalliseen ja yhteisiin hetkiin.',
     },
     signatureDishes: {
       label: 'Kulinaarisia mestariteoksia',
@@ -260,15 +260,15 @@ export const translations = {
     },
     chef: {
       label: 'Kulinaarinen mielenlaatu',
-      titleMain: 'Keittiömestari',
+      titleMain: 'Keittiöpäällikkö',
       titleAccent: '',
       quote:
         'Jokainen annos, jonka luon, on kirje muistolle — rantatori Istanbulissa, isoäidin keittiö Ankarassa, oliivilehtojen tuoksu aamunkoitteessa.',
       bio1:
-        'Keittiömestari Orhanilla on yli 30 vuoden kokemus Välimeren keittiöstä, ja hän on työskennellyt useita vuosia myös lontoolaisissa ravintoloissa. Hänen asiantuntemuksensa, intohimonsa ja tinkimätön sitoutumisensa laatuun näkyvät jokaisessa LIORAn annoksessa.',
+        'Orhanilla on yli 30 vuoden kokemus Välimeren keittiöstä sekä pitkä kokemus Lontoon ravintoloista. Hänen ammattitaitonsa ja intohimonsa näkyvät jokaisessa Lioran annoksessa.',
       bio2:
         'Perinteiset reseptit, korkealaatuiset raaka-aineet ja huolellinen valmistus ovat keittiömme perusta.',
-      name: 'Keittiömestari Orhan',
+      name: 'Keittiöpäällikkö Orhan',
       role: 'Keittiömestari',
       accoladeExcellenceLabel: 'Ruokalistan osiota',
       accoladeExcellenceValue: '11',

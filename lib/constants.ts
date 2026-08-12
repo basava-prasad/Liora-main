@@ -11,7 +11,7 @@ export const NAV_LINKS: { label: LocalizedText; href: string }[] = [
 
 export const CONTACT_INFO = {
   address: 'Länsiranta 8, Salo 24100',
-  phone: '+358 40 123 4567',
+  phone: '+35825366823',
   email: 'Liorarestaurant@gmail.com',
   mapEmbedUrl:
     'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2381.9!2d-6.2603!3d53.3498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTPCsDIwJzU5LjMiTiA2wrAxNSczNy4wIlc!5e0!3m2!1sen!2sie!4v1700000000000',
