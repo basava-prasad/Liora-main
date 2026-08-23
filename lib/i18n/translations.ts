@@ -70,6 +70,8 @@ export const translations = {
       dishes: 'dishes',
       resultsFor: 'Results for',
       noResults: 'No dishes found.',
+      seeMore: 'See more',
+      seeLess: 'See less',
     },
     chef: {
       label: 'The Culinary Mind',
@@ -257,6 +259,8 @@ export const translations = {
       dishes: 'annosta',
       resultsFor: 'Hakutulokset haulle',
       noResults: 'Annoksia ei löytynyt.',
+      seeMore: 'Näytä lisää',
+      seeLess: 'Näytä vähemmän',
     },
     chef: {
       label: 'Kulinaarinen mielenlaatu',

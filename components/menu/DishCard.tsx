@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Star } from 'lucide-react'
+import { useState } from 'react'
 import type { MenuItem } from '@/types'
 import { cn } from '@/lib/utils'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
@@ -13,7 +14,11 @@ interface DishCardProps {
 }
 
 export default function DishCard({ item, index = 0 }: DishCardProps) {
-  const { tr } = useLanguage()
+  const { tr, t } = useLanguage()
+  const [expanded, setExpanded] = useState(false)
+
+  const description = tr(item.description)
+  const showToggle = description && description.length > 80
 
   return (
     <motion.div
@@ -61,7 +66,26 @@ export default function DishCard({ item, index = 0 }: DishCardProps) {
                 )}
               </div>
               {item.description && (
-                <p className="text-cream-dark text-xs font-body leading-relaxed line-clamp-2">{tr(item.description)}</p>
+                <>
+                  <p
+                    className={cn(
+                      'text-cream-dark text-xs font-body leading-relaxed',
+                      !expanded && 'line-clamp-2'
+                    )}
+                  >
+                    {description}
+                  </p>
+                  {showToggle && (
+                    <button
+                      type="button"
+                      onClick={() => setExpanded((s) => !s)}
+                      className="mt-2 text-xs text-gold font-semibold hover:underline"
+                      aria-expanded={expanded}
+                    >
+                      {expanded ? t('menu.seeLess') : t('menu.seeMore')}
+                    </button>
+                  )}
+                </>
               )}
             </div>
             <span className="shrink-0 max-w-[45%] font-body font-semibold text-gold text-sm text-right">{tr(item.price)}</span>

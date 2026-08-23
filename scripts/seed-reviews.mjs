@@ -1,9 +1,12 @@
+import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import { readFile } from 'node:fs/promises'
 
+dotenv.config({ path: './.env.local' })
+
 const MONGODB_URI = process.env.MONGODB_URI
 if (!MONGODB_URI) {
-  console.error('Please define MONGODB_URI (run with: node --env-file=.env.local scripts/seed-reviews.mjs)')
+  console.error('Please define MONGODB_URI (set it in .env.local)')
   process.exit(1)
 }
 
