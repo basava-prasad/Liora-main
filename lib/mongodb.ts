@@ -11,25 +11,20 @@ export async function connectDB() {
     throw new Error("Please define MONGODB_URI in .env.local");
   }
 
-  if (globalThis._mongoose && globalThis._mongoose.conn) {
-    return globalThis._mongoose.conn;
-  }
+  const cached =
+    globalThis._mongoose ?? (globalThis._mongoose = { conn: null, promise: null });
 
-  if (!globalThis._mongoose) {
-    globalThis._mongoose = { conn: null, promise: null } as any;
-  }
+  if (cached.conn) return cached.conn;
 
-  if (!globalThis._mongoose.promise) {
-    globalThis._mongoose.promise = mongoose
-      .connect(MONGODB_URI, { serverSelectionTimeoutMS: 5000 })
-      .then((m) => m);
+  if (!cached.promise) {
+    cached.promise = mongoose.connect(MONGODB_URI, { serverSelectionTimeoutMS: 5000 }).then((m) => m);
   }
 
   try {
-    globalThis._mongoose.conn = await globalThis._mongoose.promise;
-    return globalThis._mongoose.conn;
+    cached.conn = await cached.promise;
+    return cached.conn;
   } catch (err) {
-    globalThis._mongoose.promise = null;
+    cached.promise = null;
     throw err;
   }
 }
