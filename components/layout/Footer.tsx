@@ -126,14 +126,6 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="btn-primary w-full mt-6"
             >
-              {t('footer.inspectionResults')}
-            </a>
-            <a
-              href="/document/oiva_report.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline w-full mt-3"
-            >
               {t('footer.oivaReport')}
             </a>
           </div>
