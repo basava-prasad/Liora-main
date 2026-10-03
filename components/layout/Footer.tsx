@@ -120,6 +120,22 @@ export default function Footer() {
                 </a>
               </li>
             </ul>
+            <a
+              href="https://www.oivahymy.fi/yrityshaku?hakusana=Liora%20restaurant"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary w-full mt-6"
+            >
+              {t('footer.inspectionResults')}
+            </a>
+            <a
+              href="/document/oiva_report.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-outline w-full mt-3"
+            >
+              {t('footer.oivaReport')}
+            </a>
           </div>
         </div>
       </div>
